@@ -80,7 +80,7 @@ export default function CardDetail() {
         </motion.div>
 
         {/* Card image + basic info */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(220px, 320px) 1fr', gap: '3rem', marginBottom: '3rem', alignItems: 'start' }}>
+        <div className="card-detail-grid" style={{ display: 'grid', gridTemplateColumns: 'minmax(220px, 320px) 1fr', gap: '3rem', marginBottom: '3rem', alignItems: 'start' }}>
           <motion.div initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }}>
             <div
               className="tarot-card-3d card-glow"

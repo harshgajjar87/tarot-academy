@@ -15,7 +15,7 @@ export default function Home() {
         </div>
 
         {/* Text — top half, padded below navbar (70px) */}
-        <div style={{
+        <div className="hero-text-block" style={{
           position: 'absolute', top: 0, left: 0, right: 0, height: '60%',
           zIndex: 20, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start',
           textAlign: 'center', padding: '100px 2rem 0',
@@ -46,6 +46,7 @@ export default function Home() {
         {/* CTA buttons */}
         <motion.div
           initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.6 }}
+          className="hero-cta"
           style={{ position: 'absolute', bottom: '10%', left: 0, right: 0, zIndex: 20, display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}
         >
           <Link to="/cards"><button className="btn-mystical" style={{ fontSize: '1rem', padding: '14px 40px' }}>Explore the 78 Cards</button></Link>

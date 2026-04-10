@@ -170,3 +170,211 @@ html, body, #root {
   border-color: var(--gold);
   transform: translateY(-3px);
 }
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE — Mobile First
+   Breakpoints: 480px | 768px | 1024px
+═══════════════════════════════════════════════ */
+
+/* ── Base mobile resets ── */
+img { max-width: 100%; }
+
+.btn-mystical {
+  padding: 10px 22px;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+/* ── Navbar ── */
+@media (max-width: 768px) {
+  .desktop-nav { display: none !important; }
+  .mobile-toggle { display: block !important; }
+}
+
+/* ── Global page padding ── */
+@media (max-width: 768px) {
+  .nebula-bg { padding-top: 80px !important; }
+
+  /* Hero text */
+  h1.shimmer-text,
+  .font-cinzel-deco.shimmer-text {
+    font-size: clamp(1.8rem, 8vw, 3rem) !important;
+  }
+
+  /* Divider margin */
+  .divider-gold { margin: 1rem 0 !important; }
+
+  /* Glass cards — full width on mobile */
+  .glass-card { border-radius: 12px !important; }
+
+  /* Tarot card 3D hover — disable on touch */
+  .tarot-card-3d:hover {
+    transform: none !important;
+  }
+}
+
+/* ── Cards grid ── */
+@media (max-width: 600px) {
+  /* Force 2-column card grid */
+  [style*="minmax(200px"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+}
+
+/* ── CardDetail — image + info side by side → stacked ── */
+@media (max-width: 768px) {
+  .card-detail-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .card-detail-image {
+    max-width: 260px !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* ── Practice spread cards — smaller on mobile ── */
+@media (max-width: 600px) {
+  .spread-card-wrap { width: 130px !important; }
+  .spread-card-inner { width: 130px !important; height: 200px !important; }
+}
+
+/* ── Feature grid — 1 col on mobile ── */
+@media (max-width: 480px) {
+  [style*="minmax(240px"] {
+    grid-template-columns: 1fr !important;
+  }
+  [style*="minmax(220px"] {
+    grid-template-columns: 1fr !important;
+  }
+  [style*="minmax(160px"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+}
+
+/* ── Home hero text padding ── */
+@media (max-width: 768px) {
+  .hero-text-block {
+    padding: 80px 1.25rem 0 !important;
+    height: 60% !important;
+  }
+  .hero-text-block p {
+    font-size: 0.9rem !important;
+  }
+  .hero-cta {
+    bottom: 6% !important;
+    gap: 0.75rem !important;
+    padding: 0 1rem !important;
+  }
+  .hero-cta button {
+    padding: 10px 20px !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+/* ── Section padding ── */
+@media (max-width: 768px) {
+  [style*="padding: '5rem 2rem"] {
+    padding: 3rem 1.25rem !important;
+  }
+  [style*="padding: '0 2rem 6rem"] {
+    padding: 0 1.25rem 3rem !important;
+  }
+}
+
+/* ── Spread reading — wrap cards nicely ── */
+@media (max-width: 768px) {
+  .spread-cards-row {
+    gap: 1rem !important;
+  }
+}
+
+/* ── Reading result grid ── */
+@media (max-width: 600px) {
+  [style*="minmax(260px"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Aspect badges grid ── */
+@media (max-width: 600px) {
+  [style*="minmax(250px"] {
+    grid-template-columns: 1fr !important;
+  }
+  [style*="minmax(280px"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── History / Colors / Numerology pages ── */
+@media (max-width: 768px) {
+  [style*="maxWidth: 1100"] {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+  [style*="maxWidth: 1200"] {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}
+
+/* ── CardDetail nav buttons ── */
+@media (max-width: 480px) {
+  [style*="justifyContent: 'space-between'"] {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+}
+
+/* ── Filters row — wrap on mobile ── */
+@media (max-width: 600px) {
+  .filters-row {
+    gap: 0.5rem !important;
+  }
+  .filters-row button {
+    font-size: 0.7rem !important;
+    padding: 6px 10px !important;
+  }
+  .filters-row input {
+    width: 100% !important;
+    min-width: unset !important;
+  }
+}
+
+/* ── Modals — full width on mobile ── */
+@media (max-width: 480px) {
+  [style*="maxWidth: 420"],
+  [style*="maxWidth: 400"],
+  [style*="maxWidth: 460"] {
+    max-width: calc(100vw - 2rem) !important;
+    padding: 1.75rem !important;
+  }
+}
+
+/* ── Practice spread selector cards ── */
+@media (max-width: 600px) {
+  [style*="minmax(300px"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Yearly spread — 2 col on mobile ── */
+@media (max-width: 480px) {
+  .yearly-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ── Navbar logo size ── */
+@media (max-width: 480px) {
+  .font-cinzel-deco.shimmer-text {
+    font-size: 1rem !important;
+    letter-spacing: 1px !important;
+  }
+}
+
+/* ── Prevent horizontal scroll ── */
+* { max-width: 100%; }
+body { overflow-x: hidden; }

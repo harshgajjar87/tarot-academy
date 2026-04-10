@@ -117,11 +117,12 @@ function TarotFlipCard({ card, position, isRevealed, onClick, index }) {
         letterSpacing: 1, textTransform: 'uppercase', textAlign: 'center', maxWidth: 220, lineHeight: 1.3
       }}>{position.label}</span>
 
-      <div style={{ width: 220, height: 340, perspective: 1000 }}>
+      <div className="spread-card-wrap" style={{ width: 220, height: 340, perspective: 1000 }}>
         <motion.div
           animate={{ rotateY: isRevealed ? 180 : 0 }}
           transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
           style={{ width: '100%', height: '100%', position: 'relative', transformStyle: 'preserve-3d' }}
+          className="spread-card-inner"
         >
           {/* Card Back */}
           <div style={{

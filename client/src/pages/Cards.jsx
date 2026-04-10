@@ -176,7 +176,7 @@ export default function Cards() {
         </motion.div>
 
         {/* Filters */}
-        <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2rem' }}>
+        <div className="filters-row" style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2rem' }}>
           {[
             { key: 'All', label: 'All 78' },
             { key: 'Major', label: 'Major Arcana' },
