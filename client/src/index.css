@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gold: #c9a84c;
+  --deep-purple: #0d0020;
+  --mid-purple: #1a0035;
+  --light-purple: #2d0060;
+  --mystic-blue: #0a0a2e;
+  --glow-gold: #ffd700;
+  --glow-purple: #9b59b6;
+  --text-light: #e8d5b7;
+  --text-gold: #c9a84c;
+}
+
+html, body, #root {
+  width: 100%; height: 100%;
+  background: var(--deep-purple);
+  color: var(--text-light);
+  font-family: 'Raleway', sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--deep-purple); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+.font-cinzel { font-family: 'Cinzel', serif; }
+.font-cinzel-deco { font-family: 'Cinzel Decorative', serif; }
+
+.glow-text {
+  text-shadow: 0 0 10px var(--glow-gold), 0 0 20px var(--glow-gold), 0 0 40px var(--gold);
+}
+
+.glow-purple {
+  text-shadow: 0 0 10px var(--glow-purple), 0 0 20px var(--glow-purple);
+}
+
+.card-glow {
+  box-shadow: 0 0 20px rgba(201,168,76,0.4), 0 0 40px rgba(201,168,76,0.2), 0 20px 60px rgba(0,0,0,0.8);
+}
+
+.card-glow:hover {
+  box-shadow: 0 0 30px rgba(201,168,76,0.7), 0 0 60px rgba(201,168,76,0.4), 0 30px 80px rgba(0,0,0,0.9);
+}
+
+.stars-bg {
+  background: radial-gradient(ellipse at center, #1a0035 0%, #0d0020 50%, #000010 100%);
+  position: relative;
+}
+
+.nebula-bg {
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(120,40,200,0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(40,80,200,0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(200,100,40,0.08) 0%, transparent 50%),
+    linear-gradient(135deg, #0d0020 0%, #0a0a2e 50%, #0d0020 100%);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-15px) rotate(1deg); }
+  66% { transform: translateY(-8px) rotate(-1deg); }
+}
+
+@keyframes floatReverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(12px) rotate(-1deg); }
+  66% { transform: translateY(6px) rotate(1deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(201,168,76,0.3); }
+  50% { box-shadow: 0 0 40px rgba(201,168,76,0.7), 0 0 80px rgba(201,168,76,0.3); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+}
+
+@keyframes cardReveal {
+  from { opacity: 0; transform: translateY(60px) rotateX(20deg); }
+  to { opacity: 1; transform: translateY(0) rotateX(0deg); }
+}
+
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float-reverse { animation: floatReverse 7s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+.animate-card-reveal { animation: cardReveal 0.8s ease-out forwards; }
+
+.shimmer-text {
+  background: linear-gradient(90deg, var(--gold) 0%, #fff8e1 40%, var(--gold) 60%, #c9a84c 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+.glass-card {
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 16px;
+}
+
+.glass-card:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(201,168,76,0.5);
+}
+
+.tarot-card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+}
+
+.tarot-card-3d:hover {
+  transform: translateY(-20px) rotateY(5deg) rotateX(5deg) scale(1.05);
+}
+
+.divider-gold {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 2rem 0;
+}
+
+.btn-mystical {
+  background: linear-gradient(135deg, rgba(201,168,76,0.2), rgba(155,89,182,0.2));
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.btn-mystical:hover {
+  background: linear-gradient(135deg, rgba(201,168,76,0.4), rgba(155,89,182,0.4));
+  box-shadow: 0 0 20px rgba(201,168,76,0.5);
+  transform: translateY(-2px);
+}
+
+.aspect-badge {
+  background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(155,89,182,0.15));
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 8px;
+  padding: 12px 16px;
+  transition: all 0.3s ease;
+}
+
+.aspect-badge:hover {
+  background: linear-gradient(135deg, rgba(201,168,76,0.25), rgba(155,89,182,0.25));
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
