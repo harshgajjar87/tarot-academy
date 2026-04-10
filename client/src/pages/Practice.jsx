@@ -109,15 +109,15 @@ function TarotFlipCard({ card, position, isRevealed, onClick, index }) {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
-      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.6rem', cursor: 'pointer', width: 180 }}
+      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.6rem', cursor: 'pointer', width: 220 }}
       onClick={onClick}
     >
       <span style={{
         fontFamily: 'Cinzel, serif', fontSize: '0.75rem', color: 'rgba(201,168,76,0.75)',
-        letterSpacing: 1, textTransform: 'uppercase', textAlign: 'center', maxWidth: 180, lineHeight: 1.3
+        letterSpacing: 1, textTransform: 'uppercase', textAlign: 'center', maxWidth: 220, lineHeight: 1.3
       }}>{position.label}</span>
 
-      <div style={{ width: 180, height: 280, perspective: 1000 }}>
+      <div style={{ width: 220, height: 340, perspective: 1000 }}>
         <motion.div
           animate={{ rotateY: isRevealed ? 180 : 0 }}
           transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
@@ -146,7 +146,7 @@ function TarotFlipCard({ card, position, isRevealed, onClick, index }) {
             {card && (
               <img src={card.image} alt={card.name}
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                onError={e => { e.target.src = `https://via.placeholder.com/180x280/1a0035/c9a84c?text=${encodeURIComponent(card?.name || '?')}`; }} />
+                onError={e => { e.target.src = `https://via.placeholder.com/220x340/1a0035/c9a84c?text=${encodeURIComponent(card?.name || '?')}`; }} />
             )}
           </div>
         </motion.div>
@@ -155,7 +155,7 @@ function TarotFlipCard({ card, position, isRevealed, onClick, index }) {
       {/* Only card name after reveal — nothing else */}
       <AnimatePresence>
         {isRevealed && card && (
-          <motion.div initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }} style={{ textAlign: 'center', maxWidth: 180 }}>
+          <motion.div initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }} style={{ textAlign: 'center', maxWidth: 220 }}>
             <div style={{ fontFamily: 'Cinzel', fontSize: '0.8rem', color: 'var(--gold)', lineHeight: 1.4 }}>{card.name}</div>
             <div style={{ fontSize: '0.7rem', color: 'rgba(232,213,183,0.5)', marginTop: '0.2rem' }}>{card.keywords}</div>
           </motion.div>

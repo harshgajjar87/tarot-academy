@@ -6,7 +6,7 @@ export default function History() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/tarot/overview')
+    axios.get(`${import.meta.env.VITE_API_URL}/api/tarot/overview`)
       .then(r => setData(r.data))
       .catch(() => setData({
         history: {

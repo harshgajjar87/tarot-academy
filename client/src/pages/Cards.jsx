@@ -100,7 +100,7 @@ export default function Cards() {
   const [lockedModal, setLockedModal] = useState(false);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/tarot/cards')
+    axios.get(`${import.meta.env.VITE_API_URL}/api/tarot/cards`)
       .then(r => setCards(r.data))
       .catch(() => setCards(fallbackCards));
   }, []);

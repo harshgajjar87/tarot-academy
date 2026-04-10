@@ -26,7 +26,7 @@ export default function CardDetail() {
   const [flipped, setFlipped] = useState(false);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/tarot/cards/${id}`)
+    axios.get(`${import.meta.env.VITE_API_URL}/api/tarot/cards/${id}`)
       .then(r => setCard(r.data))
       .catch(() => setCard(localCards[parseInt(id)] || localCards[0]));
   }, [id]);
