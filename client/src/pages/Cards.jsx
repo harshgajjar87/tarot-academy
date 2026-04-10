@@ -12,7 +12,7 @@ const fallbackCards = [
   { id: 3, name: "The Empress", number: "III", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/d/d2/RWS_Tarot_03_Empress.jpg", keywords: ["Fertility", "Abundance", "Nurturing"] },
   { id: 4, name: "The Emperor", number: "IV", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/c/c3/RWS_Tarot_04_Emperor.jpg", keywords: ["Authority", "Structure", "Leadership"] },
   { id: 5, name: "The Hierophant", number: "V", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/8/8d/RWS_Tarot_05_Hierophant.jpg", keywords: ["Tradition", "Spiritual guidance", "Institutions"] },
-  { id: 6, name: "The Lovers", number: "VI", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/3/3a/TheLovers.jpg", keywords: ["Love", "Union", "Choices"] },
+  { id: 6, name: "The Lovers", number: "VI", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/3/3a/RWS_Tarot_06_Lovers.jpg", keywords: ["Love", "Union", "Choices"] },
   { id: 7, name: "The Chariot", number: "VII", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/9/9b/RWS_Tarot_07_Chariot.jpg", keywords: ["Victory", "Control", "Willpower"] },
   { id: 8, name: "Strength", number: "VIII", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/f/f6/RWS_Tarot_08_Strength.jpg", keywords: ["Inner strength", "Courage", "Compassion"] },
   { id: 9, name: "The Hermit", number: "IX", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/4/4d/RWS_Tarot_09_Hermit.jpg", keywords: ["Solitude", "Inner guidance", "Wisdom"] },

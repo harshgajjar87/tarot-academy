@@ -8,7 +8,7 @@ const DECK = [
   { id: 3, name: "The Empress", number: "III", image: "https://upload.wikimedia.org/wikipedia/commons/d/d2/RWS_Tarot_03_Empress.jpg", keywords: "Fertility, abundance" },
   { id: 4, name: "The Emperor", number: "IV", image: "https://upload.wikimedia.org/wikipedia/commons/c/c3/RWS_Tarot_04_Emperor.jpg", keywords: "Authority, structure" },
   { id: 5, name: "The Hierophant", number: "V", image: "https://upload.wikimedia.org/wikipedia/commons/8/8d/RWS_Tarot_05_Hierophant.jpg", keywords: "Tradition, guidance" },
-  { id: 6, name: "The Lovers", number: "VI", image: "https://upload.wikimedia.org/wikipedia/commons/3/3a/TheLovers.jpg", keywords: "Love, choices" },
+  { id: 6, name: "The Lovers", number: "VI", image: "https://upload.wikimedia.org/wikipedia/commons/3/3a/RWS_Tarot_06_Lovers.jpg", keywords: "Love, choices" },
   { id: 7, name: "The Chariot", number: "VII", image: "https://upload.wikimedia.org/wikipedia/commons/9/9b/RWS_Tarot_07_Chariot.jpg", keywords: "Victory, willpower" },
   { id: 8, name: "Strength", number: "VIII", image: "https://upload.wikimedia.org/wikipedia/commons/f/f6/RWS_Tarot_08_Strength.jpg", keywords: "Inner strength, courage" },
   { id: 9, name: "The Hermit", number: "IX", image: "https://upload.wikimedia.org/wikipedia/commons/4/4d/RWS_Tarot_09_Hermit.jpg", keywords: "Solitude, wisdom" },

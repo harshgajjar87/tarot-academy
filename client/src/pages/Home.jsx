@@ -16,9 +16,9 @@ export default function Home() {
 
         {/* Text — top half, padded below navbar (70px) */}
         <div style={{
-          position: 'absolute', top: 0, left: 0, right: 0, height: '55%',
-          zIndex: 20, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-          textAlign: 'center', padding: '70px 2rem 0',
+          position: 'absolute', top: 0, left: 0, right: 0, height: '60%',
+          zIndex: 20, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start',
+          textAlign: 'center', padding: '100px 2rem 0',
           pointerEvents: 'none',
           background: 'linear-gradient(to bottom, rgba(10,0,25,0.72) 0%, rgba(10,0,25,0.35) 75%, transparent 100%)',
         }}>
@@ -125,7 +125,7 @@ export default function Home() {
             { name: 'High Priestess', num: 'II', img: 'https://upload.wikimedia.org/wikipedia/commons/8/88/RWS_Tarot_02_High_Priestess.jpg', id: 2 },
             { name: 'The Empress', num: 'III', img: 'https://upload.wikimedia.org/wikipedia/commons/d/d2/RWS_Tarot_03_Empress.jpg', id: 3 },
             { name: 'The Emperor', num: 'IV', img: 'https://upload.wikimedia.org/wikipedia/commons/c/c3/RWS_Tarot_04_Emperor.jpg', id: 4 },
-            { name: 'The Lovers', num: 'VI', img: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/TheLovers.jpg', id: 6 },
+            { name: 'The Lovers', num: 'VI', img: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/RWS_Tarot_06_Lovers.jpg', id: 6 },
             { name: 'The Chariot', num: 'VII', img: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/RWS_Tarot_07_Chariot.jpg', id: 7 },
             { name: 'The Star', num: 'XVII', img: 'https://upload.wikimedia.org/wikipedia/commons/d/db/RWS_Tarot_17_Star.jpg', id: 17 },
           ].map((card, i) => (
