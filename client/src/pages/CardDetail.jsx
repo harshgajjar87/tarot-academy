@@ -37,8 +37,9 @@ export default function CardDetail() {
     </div>
   );
 
-  // Block access to locked cards
-  if (!UNLOCKED_IDS.has(parseInt(id))) {
+  // Block access to locked cards (unless admin session active)
+  const isAdmin = sessionStorage.getItem('tarot_admin') === 'true';
+  if (!isAdmin && !UNLOCKED_IDS.has(parseInt(id))) {
     return (
       <div className="nebula-bg" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
         <motion.div initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }}

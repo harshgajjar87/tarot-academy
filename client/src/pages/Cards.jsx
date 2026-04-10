@@ -93,11 +93,37 @@ const fallbackCards = [
 // Only these card IDs are accessible to regular users
 const UNLOCKED_IDS = new Set([0, 36]); // The Fool, Ace of Cups
 
+const ADMIN_USER = import.meta.env.VITE_ADMIN_USER;
+const ADMIN_PASS = import.meta.env.VITE_ADMIN_PASS;
+
 export default function Cards() {
   const [cards, setCards] = useState([]);
   const [filter, setFilter] = useState('All');
   const [search, setSearch] = useState('');
   const [lockedModal, setLockedModal] = useState(false);
+  const [adminModal, setAdminModal] = useState(false);
+  const [adminUser, setAdminUser] = useState('');
+  const [adminPass, setAdminPass] = useState('');
+  const [adminError, setAdminError] = useState('');
+  const [isAdmin, setIsAdmin] = useState(() => sessionStorage.getItem('tarot_admin') === 'true');
+
+  const handleAdminLogin = () => {
+    if (adminUser === ADMIN_USER && adminPass === ADMIN_PASS) {
+      sessionStorage.setItem('tarot_admin', 'true');
+      setIsAdmin(true);
+      setAdminModal(false);
+      setAdminError('');
+      setAdminUser('');
+      setAdminPass('');
+    } else {
+      setAdminError('Invalid credentials. Try again.');
+    }
+  };
+
+  const handleAdminLogout = () => {
+    sessionStorage.removeItem('tarot_admin');
+    setIsAdmin(false);
+  };
 
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_API_URL}/api/tarot/cards`)
@@ -127,6 +153,27 @@ export default function Cards() {
             RIDER-WAITE TAROT COMPLETE GUIDE
           </p>
           <div className="divider-gold" />
+          {/* Admin toggle */}
+          <div style={{ marginTop: '0.75rem' }}>
+            {isAdmin ? (
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem' }}>
+                <span style={{ fontFamily: 'Cinzel', fontSize: '0.75rem', color: '#2ecc71', letterSpacing: 1 }}>
+                  ✓ Admin Mode — All 78 cards unlocked
+                </span>
+                <button onClick={handleAdminLogout} style={{
+                  background: 'none', border: '1px solid rgba(231,76,60,0.5)', borderRadius: 20,
+                  padding: '3px 12px', color: 'rgba(231,76,60,0.8)', fontFamily: 'Cinzel',
+                  fontSize: '0.7rem', cursor: 'pointer', letterSpacing: 1,
+                }}>Logout</button>
+              </div>
+            ) : (
+              <button onClick={() => { setAdminModal(true); setAdminError(''); }} style={{
+                background: 'none', border: '1px solid rgba(201,168,76,0.3)', borderRadius: 20,
+                padding: '5px 16px', color: 'rgba(201,168,76,0.6)', fontFamily: 'Cinzel',
+                fontSize: '0.72rem', cursor: 'pointer', letterSpacing: 1,
+              }}>🔑 Admin Login</button>
+            )}
+          </div>
         </motion.div>
 
         {/* Filters */}
@@ -158,7 +205,7 @@ export default function Cards() {
         {/* Card Grid */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1.5rem' }}>
           {filtered.map((card, i) => {
-            const isUnlocked = UNLOCKED_IDS.has(card.id);
+            const isUnlocked = isAdmin || UNLOCKED_IDS.has(card.id);
             return (
               <motion.div key={card.id} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.05 }}>
                 {isUnlocked ? (
@@ -228,6 +275,77 @@ export default function Cards() {
                 Explore <strong style={{ color: 'var(--gold)' }}>The Fool</strong> and <strong style={{ color: 'var(--gold)' }}>Ace of Cups</strong> — available free for everyone.
               </p>
               <button className="btn-mystical" onClick={() => setLockedModal(false)}>Close</button>
+            </motion.div>
+          </div>
+        )}
+
+        {/* Admin login modal */}
+        {adminModal && (
+          <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.85)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}
+            onClick={() => setAdminModal(false)}>
+            <motion.div initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }}
+              className="glass-card" style={{ maxWidth: 400, width: '100%', padding: '2.5rem' }}
+              onClick={e => e.stopPropagation()}>
+              <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>🔑</div>
+                <h3 className="font-cinzel" style={{ color: 'var(--gold)', fontSize: '1.2rem', letterSpacing: 2 }}>Admin Login</h3>
+                <p style={{ color: 'rgba(232,213,183,0.5)', fontSize: '0.8rem', marginTop: '0.4rem', fontFamily: 'Cinzel', letterSpacing: 1 }}>
+                  Enter credentials to unlock all 78 cards
+                </p>
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '1.5rem' }}>
+                <div>
+                  <label style={{ fontFamily: 'Cinzel', fontSize: '0.72rem', color: 'rgba(201,168,76,0.6)', letterSpacing: 1, display: 'block', marginBottom: '0.4rem' }}>USERNAME</label>
+                  <input
+                    type="text"
+                    value={adminUser}
+                    onChange={e => setAdminUser(e.target.value)}
+                    onKeyDown={e => e.key === 'Enter' && handleAdminLogin()}
+                    placeholder="Enter username"
+                    style={{
+                      width: '100%', background: 'rgba(255,255,255,0.05)',
+                      border: '1px solid rgba(201,168,76,0.3)', borderRadius: 8,
+                      padding: '10px 14px', color: 'var(--text-light)',
+                      fontFamily: 'Cinzel', fontSize: '0.85rem', outline: 'none',
+                      boxSizing: 'border-box',
+                    }}
+                  />
+                </div>
+                <div>
+                  <label style={{ fontFamily: 'Cinzel', fontSize: '0.72rem', color: 'rgba(201,168,76,0.6)', letterSpacing: 1, display: 'block', marginBottom: '0.4rem' }}>PASSWORD</label>
+                  <input
+                    type="password"
+                    value={adminPass}
+                    onChange={e => setAdminPass(e.target.value)}
+                    onKeyDown={e => e.key === 'Enter' && handleAdminLogin()}
+                    placeholder="Enter password"
+                    style={{
+                      width: '100%', background: 'rgba(255,255,255,0.05)',
+                      border: '1px solid rgba(201,168,76,0.3)', borderRadius: 8,
+                      padding: '10px 14px', color: 'var(--text-light)',
+                      fontFamily: 'Cinzel', fontSize: '0.85rem', outline: 'none',
+                      boxSizing: 'border-box',
+                    }}
+                  />
+                </div>
+                {adminError && (
+                  <p style={{ color: '#e74c3c', fontSize: '0.8rem', fontFamily: 'Cinzel', textAlign: 'center', margin: 0 }}>
+                    ✗ {adminError}
+                  </p>
+                )}
+              </div>
+
+              <div style={{ display: 'flex', gap: '0.75rem' }}>
+                <button className="btn-mystical" onClick={handleAdminLogin} style={{ flex: 1, justifyContent: 'center' }}>
+                  Unlock All Cards
+                </button>
+                <button onClick={() => setAdminModal(false)} style={{
+                  background: 'none', border: '1px solid rgba(201,168,76,0.2)', borderRadius: 8,
+                  padding: '10px 16px', color: 'rgba(201,168,76,0.4)', fontFamily: 'Cinzel',
+                  fontSize: '0.8rem', cursor: 'pointer',
+                }}>Cancel</button>
+              </div>
             </motion.div>
           </div>
         )}
