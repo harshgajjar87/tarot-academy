@@ -1,16 +1,16 @@
-﻿// Full Rider-Waite Tarot Data
+// Full Rider-Waite Tarot Data
 const tarotData = {
   history: {
     whatIsTarot: `Tarot is a set of 78 illustrated cards used for divination, self-reflection, and spiritual guidance. 
-    Each card carries symbolic imagery that speaks to the human experience â€” from joy and love to fear and transformation. 
+    Each card carries symbolic imagery that speaks to the human experience — from joy and love to fear and transformation. 
     Tarot is not fortune-telling in the literal sense; it is a mirror that reflects your inner world and helps you navigate life's journey.`,
     riderWaite: `The Rider-Waite Tarot, created in 1909, is the most widely used and recognized tarot deck in the world. 
-    It was designed by artist Pamela Colman Smith under the direction of occultist Arthur Edward Waite, and published by the Rider Company â€” hence the name. 
+    It was designed by artist Pamela Colman Smith under the direction of occultist Arthur Edward Waite, and published by the Rider Company — hence the name. 
     What made this deck revolutionary was that every single card, including the 56 Minor Arcana, featured fully illustrated scenes rather than just symbols. 
     This made the cards far more accessible and intuitive to read.`,
     history: `Tarot cards originated in northern Italy in the 15th century as playing cards for games like Tarocchi. 
     They were not used for divination until the late 18th century when French occultists began assigning mystical meanings to them. 
-    Antoine Court de GÃ©belin (1781) falsely claimed tarot had ancient Egyptian origins â€” a myth that stuck and added mystique. 
+    Antoine Court de Gébelin (1781) falsely claimed tarot had ancient Egyptian origins — a myth that stuck and added mystique. 
     By the 19th century, the Hermetic Order of the Golden Dawn (which Waite belonged to) deeply integrated tarot into Western esoteric tradition. 
     The Rider-Waite deck of 1909 became the gold standard, influencing virtually every modern deck.`
   },
@@ -69,19 +69,19 @@ const majorArcana = [
     reversed: "Recklessness, risk-taking without thought, naivety, foolishness",
     aspects: {
       past: "You once took a bold leap of faith or began something new without knowing the outcome. That innocence shaped who you are.",
-      present: "You are at the beginning of a new journey. Embrace the unknown with an open heart. Don't overthink â€” just begin.",
+      present: "You are at the beginning of a new journey. Embrace the unknown with an open heart. Don't overthink — just begin.",
       future: "A new chapter is coming. Be ready to step into the unknown with courage and trust.",
-      career: "A new job, business idea, or career path is opening up. Take the risk â€” this is your moment to start fresh.",
+      career: "A new job, business idea, or career path is opening up. Take the risk — this is your moment to start fresh.",
       health: "Your body and spirit are ready for a fresh start. Try new wellness routines or healing approaches with an open mind.",
       relationship: "A new relationship or a fresh start in an existing one is possible. Approach love with openness and no expectations.",
       dailyGuidance: "Today, say yes to something unexpected. Let go of fear and trust the universe to catch you."
     },
     practiceQuestions: [
-      { q: "Does The Fool indicate a positive new beginning?", a: "Yes â€” The Fool is one of the most positive cards for new starts, representing pure potential and excitement." },
+      { q: "Does The Fool indicate a positive new beginning?", a: "Yes — The Fool is one of the most positive cards for new starts, representing pure potential and excitement." },
       { q: "Why does The Fool stand at the edge of a cliff?", a: "The cliff represents the leap of faith required to begin something new. It symbolizes that growth requires stepping into the unknown despite the risk." },
-      { q: "What does the white rose in The Fool's hand mean?", a: "The white rose represents purity of intention and freedom from lower desires â€” the Fool acts from innocence, not ego." },
-      { q: "Should I start my new business if The Fool appears?", a: "The Fool strongly encourages new beginnings. It says: the timing is now, trust yourself, and take the leap â€” but stay aware of practical risks." },
-      { q: "What is the shadow side of The Fool?", a: "The shadow side is recklessness â€” acting without any thought, ignoring warnings (the dog), and being naive about real consequences." }
+      { q: "What does the white rose in The Fool's hand mean?", a: "The white rose represents purity of intention and freedom from lower desires — the Fool acts from innocence, not ego." },
+      { q: "Should I start my new business if The Fool appears?", a: "The Fool strongly encourages new beginnings. It says: the timing is now, trust yourself, and take the leap — but stay aware of practical risks." },
+      { q: "What is the shadow side of The Fool?", a: "The shadow side is recklessness — acting without any thought, ignoring warnings (the dog), and being naive about real consequences." }
     ]
   },
   {
@@ -93,24 +93,24 @@ const majorArcana = [
     image: "https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg",
     colors: ["Red", "White", "Yellow"],
     symbols: ["Infinity symbol (unlimited potential)", "Wand raised to sky (divine will)", "Four tools on table (four elements)", "Red roses and white lilies (passion + purity)", "Lemniscate above head"],
-    pictureDescription: "A robed figure stands before a table bearing a cup, wand, sword, and pentacle â€” the four suits. One hand points to the sky, the other to the earth. An infinity symbol floats above his head.",
+    pictureDescription: "A robed figure stands before a table bearing a cup, wand, sword, and pentacle — the four suits. One hand points to the sky, the other to the earth. An infinity symbol floats above his head.",
     keywords: ["Willpower", "Manifestation", "Skill", "Resourcefulness", "Power"],
     upright: "Manifestation, willpower, skill, resourcefulness, inspired action",
     reversed: "Manipulation, poor planning, untapped talents, trickery",
     aspects: {
       past: "You had all the tools you needed but may not have fully used them. Past skills and knowledge are your foundation.",
-      present: "You have everything you need right now to create what you desire. The power is in your hands â€” use it.",
+      present: "You have everything you need right now to create what you desire. The power is in your hands — use it.",
       future: "Your ability to manifest is growing. What you focus on with intention will materialize.",
       career: "You have the skills and talent to succeed. This is a time to take initiative, pitch ideas, and lead projects.",
-      health: "Mind-body connection is powerful now. Your thoughts directly affect your physical wellbeing â€” think positively.",
+      health: "Mind-body connection is powerful now. Your thoughts directly affect your physical wellbeing — think positively.",
       relationship: "You have the power to shape your relationship. Communicate clearly and act with intention.",
-      dailyGuidance: "Today, take one concrete action toward your goal. You have the power â€” use it deliberately."
+      dailyGuidance: "Today, take one concrete action toward your goal. You have the power — use it deliberately."
     },
     practiceQuestions: [
-      { q: "Is The Magician a yes or no card?", a: "Yes â€” The Magician is a strong yes, indicating you have the power and tools to make things happen." },
-      { q: "Why does The Magician point one hand up and one down?", a: "This gesture means 'as above, so below' â€” the Magician channels divine energy from the spiritual realm into the physical world." },
-      { q: "What do the four tools on the table represent?", a: "They represent the four elements: Wand (Fire/Will), Cup (Water/Emotion), Sword (Air/Mind), Pentacle (Earth/Material) â€” all resources available to the Magician." },
-      { q: "I feel stuck in my career. What does The Magician say?", a: "The Magician says you already have the skills and resources â€” the block is in your belief. Take action, even a small step, and momentum will follow." },
+      { q: "Is The Magician a yes or no card?", a: "Yes — The Magician is a strong yes, indicating you have the power and tools to make things happen." },
+      { q: "Why does The Magician point one hand up and one down?", a: "This gesture means 'as above, so below' — the Magician channels divine energy from the spiritual realm into the physical world." },
+      { q: "What do the four tools on the table represent?", a: "They represent the four elements: Wand (Fire/Will), Cup (Water/Emotion), Sword (Air/Mind), Pentacle (Earth/Material) — all resources available to the Magician." },
+      { q: "I feel stuck in my career. What does The Magician say?", a: "The Magician says you already have the skills and resources — the block is in your belief. Take action, even a small step, and momentum will follow." },
       { q: "What is the difference between The Magician and The Fool?", a: "The Fool begins with pure potential and no plan. The Magician has gathered tools and knowledge and is ready to consciously create. The Fool leaps; the Magician acts with intention." }
     ]
   },
@@ -123,7 +123,7 @@ const majorArcana = [
     image: "https://upload.wikimedia.org/wikipedia/commons/8/88/RWS_Tarot_02_High_Priestess.jpg",
     colors: ["Blue", "White", "Black"],
     symbols: ["Two pillars B and J (duality)", "Crescent moon at feet (intuition)", "Pomegranates (fertility/mystery)", "Scroll (hidden knowledge)", "Veil (the unseen)"],
-    pictureDescription: "A serene woman sits between two pillars â€” one black (B for Boaz) and one white (J for Jachin). She holds a scroll partially hidden by her robe. A crescent moon rests at her feet and a veil of pomegranates hangs behind her.",
+    pictureDescription: "A serene woman sits between two pillars — one black (B for Boaz) and one white (J for Jachin). She holds a scroll partially hidden by her robe. A crescent moon rests at her feet and a veil of pomegranates hangs behind her.",
     keywords: ["Intuition", "Mystery", "Inner knowing", "Subconscious", "Divine feminine"],
     upright: "Intuition, sacred knowledge, divine feminine, the subconscious mind, mystery",
     reversed: "Secrets, disconnected from intuition, information withheld, surface-level thinking",
@@ -131,17 +131,17 @@ const majorArcana = [
       past: "Your intuition has guided you before, even when you didn't fully trust it. Past experiences have deepened your inner wisdom.",
       present: "Be still. The answers you seek are within you. Trust your gut over logic right now.",
       future: "Hidden truths will be revealed. Your intuitive gifts are growing stronger.",
-      career: "Trust your instincts in professional decisions. Something is not being said openly â€” read between the lines.",
+      career: "Trust your instincts in professional decisions. Something is not being said openly — read between the lines.",
       health: "Listen to your body's subtle signals. Explore mind-body healing, meditation, or energy work.",
       relationship: "There is more beneath the surface in this relationship. Don't ignore your gut feelings about what is unsaid.",
       dailyGuidance: "Spend time in silence today. Journal, meditate, or simply sit with your thoughts. The answer will come."
     },
     practiceQuestions: [
-      { q: "Does The High Priestess mean yes or no?", a: "The High Priestess is neutral â€” she says 'not yet' or 'wait and listen.' The answer is not ready to be revealed." },
-      { q: "Why is The High Priestess associated with the moon?", a: "The moon represents the subconscious, cycles, and intuition â€” all domains of the High Priestess. She governs what lies beneath the surface of conscious awareness." },
+      { q: "Does The High Priestess mean yes or no?", a: "The High Priestess is neutral — she says 'not yet' or 'wait and listen.' The answer is not ready to be revealed." },
+      { q: "Why is The High Priestess associated with the moon?", a: "The moon represents the subconscious, cycles, and intuition — all domains of the High Priestess. She governs what lies beneath the surface of conscious awareness." },
       { q: "What does the veil behind The High Priestess mean?", a: "The veil represents the boundary between the conscious and unconscious mind, between the known and the mystery. She guards what lies beyond ordinary perception." },
       { q: "I keep having strong gut feelings about someone. What does this card say?", a: "The High Priestess validates your intuition completely. Trust what you feel even without logical proof. Your inner knowing is accurate." },
-      { q: "What is the difference between The High Priestess and The Empress?", a: "The High Priestess is inner, receptive, and mysterious â€” she represents spiritual wisdom and the subconscious. The Empress is outer, nurturing, and abundant â€” she represents physical creation and earthly love." }
+      { q: "What is the difference between The High Priestess and The Empress?", a: "The High Priestess is inner, receptive, and mysterious — she represents spiritual wisdom and the subconscious. The Empress is outer, nurturing, and abundant — she represents physical creation and earthly love." }
     ]
   },
   {
@@ -159,7 +159,7 @@ const majorArcana = [
     reversed: "Creative block, dependence, smothering, neglect of self",
     aspects: {
       past: "A nurturing figure or period of abundance shaped your foundation. You were cared for, or you cared deeply for others.",
-      present: "You are in a fertile period â€” ideas, projects, and relationships can flourish now. Nurture what you love.",
+      present: "You are in a fertile period — ideas, projects, and relationships can flourish now. Nurture what you love.",
       future: "Abundance is coming. A creative project, pregnancy, or period of growth and beauty is on the horizon.",
       career: "Creative fields, nurturing roles, or projects involving beauty and nature are favored. Your ideas will bear fruit.",
       health: "Connect with nature for healing. Nourish your body with good food, rest, and self-care. Fertility is highlighted.",
@@ -167,8 +167,8 @@ const majorArcana = [
       dailyGuidance: "Do something creative or spend time in nature today. Let yourself receive as well as give."
     },
     practiceQuestions: [
-      { q: "Does The Empress indicate pregnancy?", a: "Yes â€” The Empress is the strongest fertility card in tarot. It can indicate literal pregnancy or the birth of a creative project or new phase of life." },
-      { q: "Why is The Empress connected to Venus?", a: "Venus rules love, beauty, pleasure, and abundance â€” all qualities embodied by The Empress. She is the earthly expression of divine feminine creative power." },
+      { q: "Does The Empress indicate pregnancy?", a: "Yes — The Empress is the strongest fertility card in tarot. It can indicate literal pregnancy or the birth of a creative project or new phase of life." },
+      { q: "Why is The Empress connected to Venus?", a: "Venus rules love, beauty, pleasure, and abundance — all qualities embodied by The Empress. She is the earthly expression of divine feminine creative power." },
       { q: "What does the wheat at The Empress's feet symbolize?", a: "Wheat represents harvest, abundance, and the fruits of labor. It shows that what has been planted is now ready to be reaped." },
       { q: "I feel creatively blocked. What does The Empress advise?", a: "The Empress says: go outside, connect with your senses, and stop forcing it. Creativity flows when you are nourished and relaxed. Tend to yourself first." },
       { q: "Is The Empress a good card for relationships?", a: "Absolutely yes. The Empress brings warmth, love, sensuality, and deep nurturing energy to relationships. It often signals a loving, stable, and growing connection." }
@@ -188,20 +188,20 @@ const majorArcana = [
     upright: "Authority, establishment, structure, a father figure, solid foundation",
     reversed: "Domination, rigidity, lack of discipline, abuse of power",
     aspects: {
-      past: "A strong authority figure â€” a father, boss, or institution â€” shaped your sense of structure and discipline.",
+      past: "A strong authority figure — a father, boss, or institution — shaped your sense of structure and discipline.",
       present: "Take charge. Create order in your life. Set boundaries and lead with confidence.",
       future: "A period of stability and structure is coming. You will establish something lasting.",
       career: "Leadership opportunities arise. Take authority, be decisive, and build systems that last.",
       health: "Discipline is key. Create a structured health routine and stick to it. Address issues with the spine or bones.",
       relationship: "One partner may be dominant or paternal. Ensure power is balanced. Stability and commitment are present.",
-      dailyGuidance: "Create a plan today and follow it. Structure is your friend â€” bring order to one area of your life."
+      dailyGuidance: "Create a plan today and follow it. Structure is your friend — bring order to one area of your life."
     },
     practiceQuestions: [
-      { q: "Is The Emperor a yes or no card?", a: "Yes â€” The Emperor is a strong yes, especially for matters requiring authority, structure, and decisive action." },
+      { q: "Is The Emperor a yes or no card?", a: "Yes — The Emperor is a strong yes, especially for matters requiring authority, structure, and decisive action." },
       { q: "Why does The Emperor sit on a stone throne?", a: "Stone represents permanence, solidity, and unshakeable authority. The Emperor's power is built on a firm, lasting foundation." },
-      { q: "What is the difference between The Emperor and The Hierophant?", a: "The Emperor represents secular authority â€” government, fatherhood, worldly power. The Hierophant represents spiritual authority â€” religion, tradition, and sacred institutions." },
-      { q: "My boss is very controlling. Does The Emperor relate to this?", a: "Yes â€” The Emperor reversed or in a challenging position can represent an authoritarian, rigid, or domineering figure. It may be time to assert your own boundaries." },
-      { q: "What does The Emperor say about starting a business?", a: "The Emperor is excellent for business â€” it says build a solid structure, create clear systems, lead with confidence, and think long-term. Your foundation will determine your success." }
+      { q: "What is the difference between The Emperor and The Hierophant?", a: "The Emperor represents secular authority — government, fatherhood, worldly power. The Hierophant represents spiritual authority — religion, tradition, and sacred institutions." },
+      { q: "My boss is very controlling. Does The Emperor relate to this?", a: "Yes — The Emperor reversed or in a challenging position can represent an authoritarian, rigid, or domineering figure. It may be time to assert your own boundaries." },
+      { q: "What does The Emperor say about starting a business?", a: "The Emperor is excellent for business — it says build a solid structure, create clear systems, lead with confidence, and think long-term. Your foundation will determine your success." }
     ]
   }
 ];
@@ -230,11 +230,11 @@ const majorArcana2 = [
       dailyGuidance: "Seek wisdom from someone more experienced. Honor tradition while staying true to yourself."
     },
     practiceQuestions: [
-      { q: "Does The Hierophant indicate marriage?", a: "Yes â€” The Hierophant is one of the strongest marriage indicators in tarot, representing formal commitment and traditional union." },
-      { q: "What do the two keys at The Hierophant's feet mean?", a: "The keys represent the keys to heaven â€” the power to unlock spiritual mysteries and the balance between conscious knowledge and unconscious wisdom." },
+      { q: "Does The Hierophant indicate marriage?", a: "Yes — The Hierophant is one of the strongest marriage indicators in tarot, representing formal commitment and traditional union." },
+      { q: "What do the two keys at The Hierophant's feet mean?", a: "The keys represent the keys to heaven — the power to unlock spiritual mysteries and the balance between conscious knowledge and unconscious wisdom." },
       { q: "Why is The Hierophant associated with Taurus?", a: "Taurus values tradition, stability, and earthly pleasures. The Hierophant embodies these through religious and institutional structures that provide stability." },
-      { q: "I feel restricted by religious rules. What does this card say?", a: "The Hierophant reversed speaks directly to this â€” it encourages you to question dogma and find your own spiritual truth beyond imposed rules." },
-      { q: "Is The Hierophant a good card for education?", a: "Yes â€” The Hierophant represents formal education, mentorship, and learning within established systems. It favors traditional academic paths." }
+      { q: "I feel restricted by religious rules. What does this card say?", a: "The Hierophant reversed speaks directly to this — it encourages you to question dogma and find your own spiritual truth beyond imposed rules." },
+      { q: "Is The Hierophant a good card for education?", a: "Yes — The Hierophant represents formal education, mentorship, and learning within established systems. It favors traditional academic paths." }
     ]
   },
   {
@@ -260,9 +260,9 @@ const majorArcana2 = [
       dailyGuidance: "Make one decision today that truly aligns with your deepest values, not just what is convenient."
     },
     practiceQuestions: [
-      { q: "Does The Lovers card mean I will find love?", a: "Yes â€” The Lovers is a very positive love card. It can indicate a deep romantic connection, but also the need to make a choice aligned with your heart." },
+      { q: "Does The Lovers card mean I will find love?", a: "Yes — The Lovers is a very positive love card. It can indicate a deep romantic connection, but also the need to make a choice aligned with your heart." },
       { q: "Why is there an angel in The Lovers card?", a: "The angel Raphael represents divine blessing and healing. His presence shows that this union or choice is spiritually guided and blessed." },
-      { q: "Does The Lovers always mean romance?", a: "No â€” The Lovers also represents important choices, value alignment, and partnerships of all kinds. It asks: what do you truly love and value?" },
+      { q: "Does The Lovers always mean romance?", a: "No — The Lovers also represents important choices, value alignment, and partnerships of all kinds. It asks: what do you truly love and value?" },
       { q: "I am choosing between two people. What does The Lovers say?", a: "The Lovers asks you to look beyond surface attraction and choose based on deep values alignment. Who do you truly connect with on a soul level?" },
       { q: "What is the shadow side of The Lovers?", a: "The shadow is temptation, poor choices made from lust rather than love, and relationships that look good on the surface but lack true alignment." }
     ]
@@ -276,23 +276,23 @@ const majorArcana2 = [
     image: "https://upload.wikimedia.org/wikipedia/commons/9/9b/RWS_Tarot_07_Chariot.jpg",
     colors: ["Blue", "Black", "White"],
     symbols: ["Two sphinxes (opposing forces)", "Star crown (celestial victory)", "Armor (protection)", "Crescent moons (subconscious)", "City behind (what is left behind)", "Wand (willpower)"],
-    pictureDescription: "A warrior stands in a chariot pulled by two sphinxes â€” one black, one white. He wears star-covered armor and a crown of stars. A walled city lies behind him.",
+    pictureDescription: "A warrior stands in a chariot pulled by two sphinxes — one black, one white. He wears star-covered armor and a crown of stars. A walled city lies behind him.",
     keywords: ["Victory", "Control", "Willpower", "Determination", "Direction"],
     upright: "Control, willpower, success, action, determination, victory",
     reversed: "Lack of control, aggression, no direction, scattered energy",
     aspects: {
       past: "You overcame a significant challenge through sheer determination and willpower.",
-      present: "You are in a battle that requires focus and control. Keep moving forward â€” don't let opposing forces stop you.",
+      present: "You are in a battle that requires focus and control. Keep moving forward — don't let opposing forces stop you.",
       future: "Victory is ahead if you maintain discipline and direction. Success comes through focused effort.",
       career: "Drive and ambition will lead to professional success. A promotion or competitive win is possible.",
-      health: "Discipline in health routines will yield results. Push through resistance â€” your body is stronger than you think.",
+      health: "Discipline in health routines will yield results. Push through resistance — your body is stronger than you think.",
       relationship: "You may need to take control of a relationship situation. Don't let fear or confusion steer you off course.",
       dailyGuidance: "Focus on one goal today and pursue it with full determination. Don't let distractions pull you in two directions."
     },
     practiceQuestions: [
-      { q: "Is The Chariot a yes card?", a: "Yes â€” The Chariot is a strong yes, especially for goals requiring effort, competition, or travel." },
-      { q: "Why are the two sphinxes different colors?", a: "The black and white sphinxes represent opposing forces â€” like fear and courage, or logic and emotion. The Chariot's power is in controlling and directing both." },
-      { q: "Does The Chariot indicate travel?", a: "Yes â€” The Chariot is one of the primary travel cards in tarot, often indicating a journey, relocation, or movement toward a goal." },
+      { q: "Is The Chariot a yes card?", a: "Yes — The Chariot is a strong yes, especially for goals requiring effort, competition, or travel." },
+      { q: "Why are the two sphinxes different colors?", a: "The black and white sphinxes represent opposing forces — like fear and courage, or logic and emotion. The Chariot's power is in controlling and directing both." },
+      { q: "Does The Chariot indicate travel?", a: "Yes — The Chariot is one of the primary travel cards in tarot, often indicating a journey, relocation, or movement toward a goal." },
       { q: "I feel pulled in two directions. What does The Chariot say?", a: "The Chariot says: you must take the reins. Acknowledge both forces within you, but choose a direction and commit to it with full willpower." },
       { q: "What is the difference between The Chariot and Strength?", a: "The Chariot wins through external control, willpower, and force of action. Strength wins through inner courage, patience, and gentle mastery of instincts." }
     ]
@@ -320,11 +320,11 @@ const majorArcana2 = [
       dailyGuidance: "Face one fear today with gentleness rather than force. Your quiet courage is your greatest power."
     },
     practiceQuestions: [
-      { q: "Is Strength a positive card?", a: "Yes â€” Strength is deeply positive, representing inner courage, compassion, and the power to overcome challenges through love rather than force." },
-      { q: "Why does the woman tame the lion gently?", a: "The lion represents our primal instincts, fears, and raw emotions. The woman tames it with love and patience â€” showing that true strength is inner mastery, not suppression." },
+      { q: "Is Strength a positive card?", a: "Yes — Strength is deeply positive, representing inner courage, compassion, and the power to overcome challenges through love rather than force." },
+      { q: "Why does the woman tame the lion gently?", a: "The lion represents our primal instincts, fears, and raw emotions. The woman tames it with love and patience — showing that true strength is inner mastery, not suppression." },
       { q: "What does the infinity symbol above Strength mean?", a: "It represents unlimited inner power and the eternal nature of true strength. It also connects Strength to The Magician, showing that inner power can manifest outwardly." },
       { q: "I am going through something very hard. What does Strength say?", a: "Strength says: you have everything you need within you. You are braver than you believe. Face this with compassion for yourself and quiet determination." },
-      { q: "Is Strength about physical strength?", a: "Not primarily â€” Strength is about emotional courage, inner resilience, and the power of compassion. Physical strength may be a secondary theme, but the core message is about the strength of character." }
+      { q: "Is Strength about physical strength?", a: "Not primarily — Strength is about emotional courage, inner resilience, and the power of compassion. Physical strength may be a secondary theme, but the core message is about the strength of character." }
     ]
   },
   {
@@ -343,18 +343,18 @@ const majorArcana2 = [
     aspects: {
       past: "A period of solitude or withdrawal gave you deep wisdom that still guides you today.",
       present: "Step back from the noise. You need time alone to find your answers. The wisdom is within.",
-      future: "A period of reflection and inner work is coming. Embrace it â€” it will illuminate your path.",
+      future: "A period of reflection and inner work is coming. Embrace it — it will illuminate your path.",
       career: "Work that requires deep focus, research, or independent thinking is favored. Mentorship roles suit you.",
       health: "Rest and solitude are healing. Reduce overstimulation. Meditation and quiet practices restore you.",
-      relationship: "You or your partner may need space. Solitude is not rejection â€” it is necessary for inner growth.",
+      relationship: "You or your partner may need space. Solitude is not rejection — it is necessary for inner growth.",
       dailyGuidance: "Spend at least 20 minutes alone in silence today. Turn off your phone. Listen to your inner voice."
     },
     practiceQuestions: [
       { q: "Does The Hermit mean I will be alone?", a: "Not necessarily in a negative sense. The Hermit indicates a necessary period of solitude for inner growth and wisdom-seeking, not permanent loneliness." },
-      { q: "What does The Hermit's lantern represent?", a: "The lantern represents inner wisdom and spiritual light. The Hermit doesn't follow external lights â€” he carries his own. It shows the way for himself and others." },
+      { q: "What does The Hermit's lantern represent?", a: "The lantern represents inner wisdom and spiritual light. The Hermit doesn't follow external lights — he carries his own. It shows the way for himself and others." },
       { q: "Why is The Hermit on a mountain?", a: "The mountain represents the heights of spiritual achievement and the isolation required for deep wisdom. He has climbed above the noise of ordinary life." },
-      { q: "I feel very lonely. Is The Hermit telling me something?", a: "The Hermit distinguishes between chosen solitude (healing) and forced isolation (painful). If you feel lonely, it may be time to reconnect â€” but also to ask what inner work you are avoiding." },
-      { q: "Is The Hermit a good card for spiritual development?", a: "Yes â€” The Hermit is one of the best cards for spiritual growth. It represents the deep inner journey, meditation, and the wisdom that comes from looking within." }
+      { q: "I feel very lonely. Is The Hermit telling me something?", a: "The Hermit distinguishes between chosen solitude (healing) and forced isolation (painful). If you feel lonely, it may be time to reconnect — but also to ask what inner work you are avoiding." },
+      { q: "Is The Hermit a good card for spiritual development?", a: "Yes — The Hermit is one of the best cards for spiritual growth. It represents the deep inner journey, meditation, and the wisdom that comes from looking within." }
     ]
   },
   {
@@ -373,18 +373,18 @@ const majorArcana2 = [
     aspects: {
       past: "A major turning point or cycle of fate has already shaped your current situation.",
       present: "The wheel is turning in your favor. A lucky break or significant change is happening now.",
-      future: "A major shift is coming. What goes around comes around â€” karma is at work.",
+      future: "A major shift is coming. What goes around comes around — karma is at work.",
       career: "A lucky opportunity or unexpected career change is on the horizon. Be ready to seize it.",
       health: "Health cycles are shifting. What has been difficult may improve. Trust the natural cycles of healing.",
       relationship: "A fated meeting or significant turning point in a relationship. Destiny is at work.",
       dailyGuidance: "Trust that the universe is working in your favor today. Let go of control and flow with what comes."
     },
     practiceQuestions: [
-      { q: "Is Wheel of Fortune a lucky card?", a: "Yes â€” it is one of the luckiest cards in tarot, indicating good fortune, positive change, and the universe working in your favor." },
-      { q: "What does the wheel symbolize in this card?", a: "The wheel represents the eternal cycles of life â€” rise and fall, good times and bad, karma and destiny. Nothing stays the same forever." },
+      { q: "Is Wheel of Fortune a lucky card?", a: "Yes — it is one of the luckiest cards in tarot, indicating good fortune, positive change, and the universe working in your favor." },
+      { q: "What does the wheel symbolize in this card?", a: "The wheel represents the eternal cycles of life — rise and fall, good times and bad, karma and destiny. Nothing stays the same forever." },
       { q: "Why are there creatures in the four corners?", a: "The four winged creatures represent the four fixed zodiac signs (Taurus, Leo, Scorpio, Aquarius) and the four elements. They represent stability amid constant change." },
-      { q: "I feel like my luck has run out. What does this card say?", a: "The Wheel of Fortune reversed says: a difficult cycle is present, but it will turn. No wheel stays at the bottom forever. Your luck will change â€” hold on." },
-      { q: "Does Wheel of Fortune indicate fate or free will?", a: "Both â€” the wheel represents external forces and karma (fate), but the sphinx at the top represents wisdom and the ability to rise above circumstances through conscious choice (free will)." }
+      { q: "I feel like my luck has run out. What does this card say?", a: "The Wheel of Fortune reversed says: a difficult cycle is present, but it will turn. No wheel stays at the bottom forever. Your luck will change — hold on." },
+      { q: "Does Wheel of Fortune indicate fate or free will?", a: "Both — the wheel represents external forces and karma (fate), but the sphinx at the top represents wisdom and the ability to rise above circumstances through conscious choice (free will)." }
     ]
   }
 ];
@@ -405,20 +405,20 @@ const majorArcana3 = [
     upright: "Justice, fairness, truth, cause and effect, law, accountability",
     reversed: "Unfairness, lack of accountability, dishonesty, legal complications",
     aspects: {
-      past: "A past action or decision is now returning its consequences â€” karma is completing its cycle.",
+      past: "A past action or decision is now returning its consequences — karma is completing its cycle.",
       present: "A situation requires honest evaluation. Face the truth clearly and act with integrity.",
       future: "A fair outcome is coming. What you have put out will return to you in equal measure.",
       career: "Legal matters, contracts, or performance reviews are highlighted. Act with integrity and document everything.",
-      health: "Balance in lifestyle is essential. Examine what is out of equilibrium â€” diet, rest, stress.",
+      health: "Balance in lifestyle is essential. Examine what is out of equilibrium — diet, rest, stress.",
       relationship: "Fairness and honesty are needed. If one person is giving more than the other, this imbalance must be addressed.",
       dailyGuidance: "Make one decision today based purely on what is right, not what is convenient."
     },
     practiceQuestions: [
-      { q: "Will justice be served in my situation?", a: "Yes â€” Justice indicates that truth will prevail and outcomes will be proportional to actions taken. Karma is at work." },
+      { q: "Will justice be served in my situation?", a: "Yes — Justice indicates that truth will prevail and outcomes will be proportional to actions taken. Karma is at work." },
       { q: "Why does Justice hold both a sword and scales?", a: "The scales represent weighing all sides fairly; the sword represents the decisive, impartial cut of truth. Together they show that fair judgment requires both balance and clarity." },
       { q: "Does Justice mean I will win my legal case?", a: "Justice favors the side with truth and integrity. If your case is honest and well-documented, this card is very positive for legal matters." },
       { q: "I feel I was treated unfairly. What does Justice say?", a: "Justice reversed can validate that an injustice occurred. It encourages you to seek accountability through proper channels and to document the truth clearly." },
-      { q: "Is Justice about karma?", a: "Absolutely â€” Justice is the karmic card of the Major Arcana. It says: every action has an equal and proportional consequence. What you send out returns." }
+      { q: "Is Justice about karma?", a: "Absolutely — Justice is the karmic card of the Major Arcana. It says: every action has an equal and proportional consequence. What you send out returns." }
     ]
   },
   {
@@ -429,7 +429,7 @@ const majorArcana3 = [
     suit: null,
     image: "https://upload.wikimedia.org/wikipedia/commons/2/2b/RWS_Tarot_12_Hanged_Man.jpg",
     colors: ["Blue", "Red", "Yellow"],
-    symbols: ["Inverted figure (new perspective)", "Halo of light (enlightenment)", "T-shaped cross (sacrifice)", "Calm expression (acceptance)", "One leg crossed (number 4 â€” stability in surrender)"],
+    symbols: ["Inverted figure (new perspective)", "Halo of light (enlightenment)", "T-shaped cross (sacrifice)", "Calm expression (acceptance)", "One leg crossed (number 4 — stability in surrender)"],
     pictureDescription: "A man hangs upside down from a T-shaped wooden cross by one foot. His other leg is bent, forming a figure-4. His expression is serene, not pained. A golden halo surrounds his head.",
     keywords: ["Surrender", "Pause", "New perspective", "Sacrifice", "Waiting"],
     upright: "Pause, surrender, letting go, new perspectives, sacrifice for greater good",
@@ -437,17 +437,17 @@ const majorArcana3 = [
     aspects: {
       past: "A period of waiting or sacrifice in the past gave you a perspective that others around you simply don't have.",
       present: "Stop pushing. Surrender to the pause. The answer will come when you stop forcing it.",
-      future: "A period of waiting is ahead â€” use it for deep reflection. What you learn in stillness will change everything.",
+      future: "A period of waiting is ahead — use it for deep reflection. What you learn in stillness will change everything.",
       career: "A project or opportunity is on hold. Use this time to rethink your approach from a completely new angle.",
-      health: "Rest is not weakness â€” it is medicine. Your body is asking you to stop and let it heal.",
+      health: "Rest is not weakness — it is medicine. Your body is asking you to stop and let it heal.",
       relationship: "Something is in suspension. Don't force a resolution. Let things unfold naturally.",
       dailyGuidance: "Do nothing about your biggest problem today. Simply observe it from a different angle."
     },
     practiceQuestions: [
-      { q: "Does The Hanged Man mean I am stuck?", a: "Not exactly stuck â€” more like deliberately paused. The Hanged Man chooses to hang there for enlightenment. The question is: what can you see from this upside-down view?" },
-      { q: "Why does The Hanged Man look peaceful?", a: "Because he has chosen surrender. He is not a victim â€” he is a willing sacrifice for greater wisdom. Peace comes from accepting what cannot be changed right now." },
+      { q: "Does The Hanged Man mean I am stuck?", a: "Not exactly stuck — more like deliberately paused. The Hanged Man chooses to hang there for enlightenment. The question is: what can you see from this upside-down view?" },
+      { q: "Why does The Hanged Man look peaceful?", a: "Because he has chosen surrender. He is not a victim — he is a willing sacrifice for greater wisdom. Peace comes from accepting what cannot be changed right now." },
       { q: "How long will this waiting period last?", a: "The Hanged Man doesn't give timelines, but it says: the waiting ends when the lesson is learned. Stop resisting and the pause will lift." },
-      { q: "Is The Hanged Man a bad card?", a: "No â€” it is a card of profound wisdom. It asks you to see your situation from a completely different perspective. The discomfort is temporary; the insight is permanent." },
+      { q: "Is The Hanged Man a bad card?", a: "No — it is a card of profound wisdom. It asks you to see your situation from a completely different perspective. The discomfort is temporary; the insight is permanent." },
       { q: "What sacrifice does The Hanged Man represent?", a: "It represents the sacrifice of ego, urgency, and control. You give up the need to act immediately in exchange for deeper understanding and a better outcome." }
     ]
   },
@@ -465,19 +465,19 @@ const majorArcana3 = [
     upright: "Endings, beginnings, change, transformation, transition, letting go",
     reversed: "Resistance to change, inability to move on, stagnation, fear of endings",
     aspects: {
-      past: "Something significant ended in your past â€” a relationship, phase, or identity. That ending made space for who you are now.",
+      past: "Something significant ended in your past — a relationship, phase, or identity. That ending made space for who you are now.",
       present: "Something is ending. Don't cling to it. This ending is necessary for your evolution.",
       future: "A major transformation is coming. What dies will make room for something far better.",
-      career: "A job, role, or career path is ending. This is not failure â€” it is evolution. Something better is being born.",
+      career: "A job, role, or career path is ending. This is not failure — it is evolution. Something better is being born.",
       health: "Old habits that harm your health must die. A significant health transformation is possible.",
       relationship: "A relationship or phase within one is ending. This may be painful but it is necessary for growth.",
-      dailyGuidance: "Identify one thing you need to let die today â€” a habit, a belief, a grudge. Release it with gratitude."
+      dailyGuidance: "Identify one thing you need to let die today — a habit, a belief, a grudge. Release it with gratitude."
     },
     practiceQuestions: [
       { q: "Does the Death card mean someone will die?", a: "Almost never literally. The Death card represents transformation, endings, and the death of old patterns. It is one of the most misunderstood cards in tarot." },
-      { q: "Why is the horse white if Death is dark?", a: "The white horse represents the purity and inevitability of transformation. Change is not evil â€” it is natural and necessary. The white color shows that what comes after is clean and new." },
+      { q: "Why is the horse white if Death is dark?", a: "The white horse represents the purity and inevitability of transformation. Change is not evil — it is natural and necessary. The white color shows that what comes after is clean and new." },
       { q: "I am afraid of change. What does Death say to me?", a: "Death says: your fear of endings is keeping you trapped in something that no longer serves you. The caterpillar must dissolve completely to become the butterfly. Trust the process." },
-      { q: "Is Death a good card for new beginnings?", a: "Yes â€” Death is actually one of the best cards for new beginnings, because it guarantees that the old is truly cleared away. You cannot build something new on a foundation that hasn't been cleared." },
+      { q: "Is Death a good card for new beginnings?", a: "Yes — Death is actually one of the best cards for new beginnings, because it guarantees that the old is truly cleared away. You cannot build something new on a foundation that hasn't been cleared." },
       { q: "Why does the sun rise in the Death card?", a: "The rising sun between the towers represents rebirth and hope. Even in the darkest ending, a new dawn is already beginning. Death is never the final word." }
     ]
   },
@@ -496,7 +496,7 @@ const majorArcana3 = [
     reversed: "Imbalance, excess, lack of long-term vision, discord",
     aspects: {
       past: "A period of balance and patient effort in the past created a foundation of quiet strength.",
-      present: "Find the middle path. You are being called to blend opposites â€” logic and intuition, action and rest.",
+      present: "Find the middle path. You are being called to blend opposites — logic and intuition, action and rest.",
       future: "Through patience and balance, something beautiful is being alchemized in your life.",
       career: "A balanced, patient approach to work will yield the best results. Avoid extremes and rushing.",
       health: "Moderation is the key to healing. Balance activity with rest, nutrition with enjoyment.",
@@ -504,10 +504,10 @@ const majorArcana3 = [
       dailyGuidance: "Find one area of your life that is extreme and bring it toward the middle today."
     },
     practiceQuestions: [
-      { q: "Is Temperance a positive card?", a: "Yes â€” Temperance is deeply positive, indicating that you are on the right path and that patience and balance will bring beautiful results." },
-      { q: "What does the angel pouring between two cups mean?", a: "It represents the alchemical blending of opposites â€” conscious and unconscious, masculine and feminine, spiritual and material. True wisdom flows between extremes." },
+      { q: "Is Temperance a positive card?", a: "Yes — Temperance is deeply positive, indicating that you are on the right path and that patience and balance will bring beautiful results." },
+      { q: "What does the angel pouring between two cups mean?", a: "It represents the alchemical blending of opposites — conscious and unconscious, masculine and feminine, spiritual and material. True wisdom flows between extremes." },
       { q: "Why does the angel have one foot in water and one on land?", a: "This represents the balance between the emotional/spiritual realm (water) and the physical/material world (land). Temperance asks you to honor both." },
-      { q: "I keep going to extremes. What does Temperance say?", a: "Temperance is speaking directly to you. It says: the middle path is not boring â€” it is where true power lives. Extremes exhaust you; balance sustains you." },
+      { q: "I keep going to extremes. What does Temperance say?", a: "Temperance is speaking directly to you. It says: the middle path is not boring — it is where true power lives. Extremes exhaust you; balance sustains you." },
       { q: "Does Temperance indicate a long wait?", a: "It can indicate that things are moving at the right pace, even if it feels slow. Temperance says: divine timing is at work. Trust the process and don't rush the alchemy." }
     ]
   },
@@ -526,18 +526,18 @@ const majorArcana3 = [
     reversed: "Releasing limiting beliefs, exploring dark thoughts safely, detachment, freedom",
     aspects: {
       past: "A past addiction, toxic relationship, or limiting belief held you captive. Recognizing it was the first step to freedom.",
-      present: "You may be in a situation that feels inescapable â€” but look closely. The chains are looser than they appear.",
+      present: "You may be in a situation that feels inescapable — but look closely. The chains are looser than they appear.",
       future: "You have the power to break free. The first step is recognizing that the bondage is partly self-imposed.",
       career: "A toxic work environment, unhealthy ambition, or financial obsession may be draining your soul. Examine what truly drives you.",
       health: "Addictive behaviors, unhealthy habits, or mental health shadows need honest attention. Seek help without shame.",
       relationship: "A relationship based on obsession, control, or unhealthy dependency is highlighted. Love should feel free, not trapped.",
-      dailyGuidance: "Identify one thing that has power over you today. Name it honestly â€” that naming is the beginning of freedom."
+      dailyGuidance: "Identify one thing that has power over you today. Name it honestly — that naming is the beginning of freedom."
     },
     practiceQuestions: [
-      { q: "Does The Devil mean something evil is happening?", a: "No â€” The Devil represents our own shadow: addictions, obsessions, and the parts of ourselves we refuse to look at. It is a call to self-awareness, not a sign of evil." },
-      { q: "Why are the chains loose in The Devil card?", a: "The loose chains are the most important detail in the card. They show that the bondage is largely self-imposed. You could remove the chains â€” but you haven't yet chosen to." },
+      { q: "Does The Devil mean something evil is happening?", a: "No — The Devil represents our own shadow: addictions, obsessions, and the parts of ourselves we refuse to look at. It is a call to self-awareness, not a sign of evil." },
+      { q: "Why are the chains loose in The Devil card?", a: "The loose chains are the most important detail in the card. They show that the bondage is largely self-imposed. You could remove the chains — but you haven't yet chosen to." },
       { q: "I feel trapped in my relationship. What does The Devil say?", a: "The Devil asks: what is keeping you there? Fear? Comfort? Habit? The chains are loose. The first step to freedom is honestly naming what holds you." },
-      { q: "Is The Devil about literal evil or the devil?", a: "Neither â€” The Devil is a psychological archetype representing the shadow self, materialism, and the illusions we create that keep us small. It is about inner work, not external evil." },
+      { q: "Is The Devil about literal evil or the devil?", a: "Neither — The Devil is a psychological archetype representing the shadow self, materialism, and the illusions we create that keep us small. It is about inner work, not external evil." },
       { q: "What is the positive message of The Devil?", a: "The positive message is radical self-honesty. By facing your shadows, addictions, and illusions without judgment, you reclaim enormous personal power. The Devil reversed is liberation." }
     ]
   }
@@ -729,10 +729,9 @@ const majorArcana5 = [
   }
 ];
 
-const allCards = [...majorArcana, ...majorArcana2, ...majorArcana3, ...majorArcana4, ...majorArcana5];
-module.exports = { tarotData, allCards };
+// allCards assembled after all suit arrays are defined below
 
-// ── MINOR ARCANA: SUIT OF CUPS ──────────────────────────────────────────────
+// -- MINOR ARCANA: SUIT OF CUPS ----------------------------------------------
 const cupsCards = [
   {
     id: 22,
@@ -751,16 +750,16 @@ const cupsCards = [
     aspects: {
       past: "A profound emotional opening or spiritual gift was offered to you. Whether you received it fully shaped your emotional world.",
       present: "A new emotional beginning is being offered right now. Open your heart and receive it.",
-      future: "A beautiful new emotional chapter is coming — love, creativity, or spiritual awakening.",
+      future: "A beautiful new emotional chapter is coming � love, creativity, or spiritual awakening.",
       career: "Creative inspiration and emotional fulfillment in work. A new project that truly moves you is beginning.",
       health: "Emotional healing is available. Open yourself to receiving care and nurturing.",
       relationship: "A new love or a profound deepening of an existing relationship. Pure, unconditional love is present.",
       dailyGuidance: "Open your heart today. Say yes to love, beauty, and emotional connection in whatever form it arrives."
     },
     practiceQuestions: [
-      { q: "Is Ace of Cups a yes card?", a: "Yes — it is one of the most positive yes cards for love, relationships, and emotional matters." },
-      { q: "What does the overflowing cup symbolize?", a: "The overflowing cup represents divine love that cannot be contained — it pours out freely and abundantly. It shows that emotional gifts are being given without limit." },
-      { q: "Does Ace of Cups indicate a new relationship?", a: "Yes — it is the strongest card for new romantic beginnings. It can also indicate a new friendship, creative project, or spiritual opening." },
+      { q: "Is Ace of Cups a yes card?", a: "Yes � it is one of the most positive yes cards for love, relationships, and emotional matters." },
+      { q: "What does the overflowing cup symbolize?", a: "The overflowing cup represents divine love that cannot be contained � it pours out freely and abundantly. It shows that emotional gifts are being given without limit." },
+      { q: "Does Ace of Cups indicate a new relationship?", a: "Yes � it is the strongest card for new romantic beginnings. It can also indicate a new friendship, creative project, or spiritual opening." },
       { q: "What does the dove in Ace of Cups mean?", a: "The dove represents the Holy Spirit, peace, and divine blessing. It shows that this new emotional beginning is spiritually guided and blessed from above." },
       { q: "I feel emotionally numb. What does Ace of Cups say?", a: "Ace of Cups reversed speaks to this directly. It says: the cup is still there, but something is blocking the flow. Gently explore what is preventing you from receiving love and feeling." }
     ]
@@ -789,11 +788,11 @@ const cupsCards = [
       dailyGuidance: "Reach out to someone you care about today. True connection requires two people to show up equally."
     },
     practiceQuestions: [
-      { q: "Is Two of Cups the soulmate card?", a: "Yes — Two of Cups is widely considered the soulmate or twin flame card in tarot. It represents the deepest form of mutual love and soul recognition." },
+      { q: "Is Two of Cups the soulmate card?", a: "Yes � Two of Cups is widely considered the soulmate or twin flame card in tarot. It represents the deepest form of mutual love and soul recognition." },
       { q: "What does the caduceus between the two figures mean?", a: "The caduceus (two serpents on a staff) represents healing, balance, and the harmonious union of opposites. It shows that this relationship has a healing and elevating effect on both people." },
-      { q: "Does Two of Cups always mean romantic love?", a: "No — it can represent any deeply meaningful partnership: a best friendship, a business partnership, or a creative collaboration. The key is mutual respect and equal exchange." },
+      { q: "Does Two of Cups always mean romantic love?", a: "No � it can represent any deeply meaningful partnership: a best friendship, a business partnership, or a creative collaboration. The key is mutual respect and equal exchange." },
       { q: "My relationship feels one-sided. What does this card say?", a: "Two of Cups reversed speaks to this. It says: true partnership requires equal giving. If one person is giving more, the balance needs to be addressed through honest communication." },
-      { q: "What is the difference between Two of Cups and The Lovers?", a: "Two of Cups is about a specific human-to-human bond — intimate, personal, and mutual. The Lovers is broader, covering choices, values alignment, and divine blessing of a union." }
+      { q: "What is the difference between Two of Cups and The Lovers?", a: "Two of Cups is about a specific human-to-human bond � intimate, personal, and mutual. The Lovers is broader, covering choices, values alignment, and divine blessing of a union." }
     ]
   },
   {
@@ -817,14 +816,14 @@ const cupsCards = [
       career: "Team success, office celebrations, or creative collaborations that bring genuine joy are highlighted.",
       health: "Social connection and laughter are medicine. Spend time with people who lift your spirit.",
       relationship: "Joyful social connections, celebrations with loved ones, or a relationship that brings happiness to your whole community.",
-      dailyGuidance: "Celebrate something today — even something small. Call a friend. Share good news. Let joy be communal."
+      dailyGuidance: "Celebrate something today � even something small. Call a friend. Share good news. Let joy be communal."
     },
     practiceQuestions: [
-      { q: "Does Three of Cups indicate a party or celebration?", a: "Yes — Three of Cups is the celebration card. It often literally indicates a party, wedding, reunion, baby shower, or any joyful gathering." },
+      { q: "Does Three of Cups indicate a party or celebration?", a: "Yes � Three of Cups is the celebration card. It often literally indicates a party, wedding, reunion, baby shower, or any joyful gathering." },
       { q: "What do the three women dancing represent?", a: "They represent the power of female friendship, community, and collective joy. Together they create something greater than any one of them could alone." },
-      { q: "Does Three of Cups indicate a third person in a relationship?", a: "Reversed, yes — Three of Cups can indicate a third party interfering in a relationship. Upright it is purely celebratory and social." },
-      { q: "I feel isolated. What does Three of Cups say?", a: "Three of Cups says: reach out. Your community is there — you just need to initiate. This card is a reminder that joy multiplies when it is shared." },
-      { q: "Is Three of Cups a good card for creative projects?", a: "Yes — it represents creative collaboration and the joy of making something together. Group projects, creative teams, and artistic communities are all blessed by this card." }
+      { q: "Does Three of Cups indicate a third person in a relationship?", a: "Reversed, yes � Three of Cups can indicate a third party interfering in a relationship. Upright it is purely celebratory and social." },
+      { q: "I feel isolated. What does Three of Cups say?", a: "Three of Cups says: reach out. Your community is there � you just need to initiate. This card is a reminder that joy multiplies when it is shared." },
+      { q: "Is Three of Cups a good card for creative projects?", a: "Yes � it represents creative collaboration and the joy of making something together. Group projects, creative teams, and artistic communities are all blessed by this card." }
     ]
   },
   {
@@ -845,17 +844,17 @@ const cupsCards = [
       past: "A period of withdrawal or emotional disengagement in the past may have caused you to miss an opportunity that was right in front of you.",
       present: "You may be so focused on what you lack that you are missing what is being offered. Look up.",
       future: "A new opportunity will be presented. Make sure you are open enough to see and receive it.",
-      career: "Boredom or dissatisfaction at work is present. But a new opportunity may be closer than you think — are you open to it?",
+      career: "Boredom or dissatisfaction at work is present. But a new opportunity may be closer than you think � are you open to it?",
       health: "Emotional withdrawal and apathy can affect physical energy. Reconnect with what brings you joy.",
-      relationship: "You or your partner may be emotionally withdrawn. The connection is there — but someone needs to re-engage.",
+      relationship: "You or your partner may be emotionally withdrawn. The connection is there � but someone needs to re-engage.",
       dailyGuidance: "Look up from your current dissatisfaction today. Something new is being offered. Are you open enough to see it?"
     },
     practiceQuestions: [
-      { q: "Is Four of Cups a negative card?", a: "Not entirely — it represents a necessary period of contemplation and reevaluation. The danger is staying in apathy so long that you miss real opportunities." },
+      { q: "Is Four of Cups a negative card?", a: "Not entirely � it represents a necessary period of contemplation and reevaluation. The danger is staying in apathy so long that you miss real opportunities." },
       { q: "What does the cup from the cloud represent?", a: "The cup from the cloud is a divine offer or new opportunity being presented. The figure's crossed arms and downward gaze show he is too absorbed in his own thoughts to notice it." },
       { q: "Why does the figure ignore the offered cup?", a: "He is in a state of emotional withdrawal and self-absorption. He is so focused on what he already has (or lacks) that he cannot see the new gift being offered." },
       { q: "I feel bored and unmotivated. What does Four of Cups say?", a: "Four of Cups validates your feeling but also challenges you: is this boredom a sign you need to rest and reflect, or is it apathy keeping you from something wonderful? Look for the cup from the cloud." },
-      { q: "What is the positive message of Four of Cups?", a: "The positive message is that contemplation and withdrawal can be valuable — they allow you to clarify what you truly want. The key is not to stay there so long that you miss what life is offering." }
+      { q: "What is the positive message of Four of Cups?", a: "The positive message is that contemplation and withdrawal can be valuable � they allow you to clarify what you truly want. The key is not to stay there so long that you miss what life is offering." }
     ]
   },
   {
@@ -873,20 +872,20 @@ const cupsCards = [
     upright: "Regret, failure, disappointment, pessimism, grief, focusing on loss",
     reversed: "Moving on, acceptance, finding peace, forgiveness, new perspective after grief",
     aspects: {
-      past: "A significant loss or disappointment in the past left a mark. The grief was real — but so are the two cups still standing.",
+      past: "A significant loss or disappointment in the past left a mark. The grief was real � but so are the two cups still standing.",
       present: "You are grieving a loss. This is valid and necessary. But do not forget what still remains.",
       future: "The grief will pass. When you turn around, you will see what has survived and what new path awaits.",
-      career: "A professional setback, failed project, or job loss is causing grief. But not everything is lost — reassess what remains.",
+      career: "A professional setback, failed project, or job loss is causing grief. But not everything is lost � reassess what remains.",
       health: "Grief and emotional pain need to be processed, not suppressed. Allow yourself to feel it fully so it can move through you.",
       relationship: "A relationship loss or disappointment is being mourned. Give yourself time to grieve, then look at what love still remains.",
-      dailyGuidance: "Acknowledge your grief today — it is real. Then gently turn around and look at the two cups still standing. Not everything is lost."
+      dailyGuidance: "Acknowledge your grief today � it is real. Then gently turn around and look at the two cups still standing. Not everything is lost."
     },
     practiceQuestions: [
-      { q: "Does Five of Cups mean something bad will happen?", a: "It indicates a loss or disappointment has occurred or is being felt. But its most important message is the two standing cups — not everything is lost, and a path forward exists." },
-      { q: "What do the two standing cups behind the figure mean?", a: "They represent what has survived the loss — the blessings, relationships, and resources that remain. The figure cannot see them because they are turned away, focused only on what was lost." },
-      { q: "What does the bridge in Five of Cups represent?", a: "The bridge represents the path forward — the way to move from grief toward healing and a new beginning. It is there, waiting, whenever the figure is ready to turn around and walk toward it." },
+      { q: "Does Five of Cups mean something bad will happen?", a: "It indicates a loss or disappointment has occurred or is being felt. But its most important message is the two standing cups � not everything is lost, and a path forward exists." },
+      { q: "What do the two standing cups behind the figure mean?", a: "They represent what has survived the loss � the blessings, relationships, and resources that remain. The figure cannot see them because they are turned away, focused only on what was lost." },
+      { q: "What does the bridge in Five of Cups represent?", a: "The bridge represents the path forward � the way to move from grief toward healing and a new beginning. It is there, waiting, whenever the figure is ready to turn around and walk toward it." },
       { q: "I cannot stop grieving a past relationship. What does this card say?", a: "Five of Cups honors your grief completely. But it also gently asks: are you so focused on what you lost that you cannot see what still remains? The bridge to healing is behind you." },
-      { q: "Is Five of Cups about regret?", a: "Yes — regret is a core theme. It shows someone mourning what could have been. The lesson is to process the grief, learn from it, and then consciously choose to move forward rather than staying frozen in regret." }
+      { q: "Is Five of Cups about regret?", a: "Yes � regret is a core theme. It shows someone mourning what could have been. The lesson is to process the grief, learn from it, and then consciously choose to move forward rather than staying frozen in regret." }
     ]
   },
   {
@@ -905,7 +904,7 @@ const cupsCards = [
     reversed: "Stuck in the past, naivety, unrealistic idealism, leaving the past behind",
     aspects: {
       past: "Happy childhood memories, innocent joy, and the gifts of the past are a source of comfort and wisdom.",
-      present: "Something from your past is returning — a person, a memory, or a childlike joy. Receive it with an open heart.",
+      present: "Something from your past is returning � a person, a memory, or a childlike joy. Receive it with an open heart.",
       future: "A reunion, a return to something familiar, or a gift from the past is coming.",
       career: "Returning to work you loved as a child, or a career that reconnects you with your original passion.",
       health: "Healing through reconnecting with childhood joy, play, and innocence. Inner child work is powerful now.",
@@ -913,11 +912,11 @@ const cupsCards = [
       dailyGuidance: "Do something today that your childhood self would have loved. Reconnect with innocent joy and playfulness."
     },
     practiceQuestions: [
-      { q: "Does Six of Cups mean someone from my past will return?", a: "Yes — Six of Cups is one of the strongest indicators of someone from the past returning, whether a childhood friend, an old flame, or a family member." },
+      { q: "Does Six of Cups mean someone from my past will return?", a: "Yes � Six of Cups is one of the strongest indicators of someone from the past returning, whether a childhood friend, an old flame, or a family member." },
       { q: "What do the flowers in the cups represent?", a: "The flowers represent gifts, memories, and the beauty of the past. They are offered freely and joyfully, showing that the past holds genuine treasures worth revisiting." },
       { q: "Is Six of Cups always about the past?", a: "Primarily yes, but it also speaks to innocence, generosity, and childlike joy in the present. It can indicate a gift being given or received, or a return to something that once brought pure happiness." },
-      { q: "I keep thinking about my childhood. What does Six of Cups say?", a: "Six of Cups says: your childhood memories are calling you for a reason. There is something there — a joy, a gift, or an unhealed wound — that wants your attention. Honor it." },
-      { q: "What is the shadow side of Six of Cups?", a: "The shadow is living too much in the past — idealizing what was and refusing to engage with the present. Nostalgia is beautiful in small doses but can become a prison if it prevents you from moving forward." }
+      { q: "I keep thinking about my childhood. What does Six of Cups say?", a: "Six of Cups says: your childhood memories are calling you for a reason. There is something there � a joy, a gift, or an unhealed wound � that wants your attention. Honor it." },
+      { q: "What is the shadow side of Six of Cups?", a: "The shadow is living too much in the past � idealizing what was and refusing to engage with the present. Nostalgia is beautiful in small doses but can become a prison if it prevents you from moving forward." }
     ]
   },
   {
@@ -944,11 +943,22 @@ const cupsCards = [
       dailyGuidance: "Choose one thing today and commit to it. Stop entertaining every possibility and take one real step forward."
     },
     practiceQuestions: [
-      { q: "Is Seven of Cups a bad card?", a: "Not inherently — it warns against illusion and wishful thinking, but it also shows the richness of imagination. The challenge is to choose one real path from the many fantasies." },
-      { q: "What do the seven cups in the clouds represent?", a: "Each cup represents a different fantasy, desire, or illusion: wealth, victory, love, danger, wisdom, mystery, and ambition. They float in clouds because none of them are yet real — they are all possibilities." },
-      { q: "I cannot make a decision. What does Seven of Cups say?", a: "Seven of Cups says: you are overwhelmed by possibilities. The solution is not more thinking — it is grounding. Ask yourself: which of these is real and which is fantasy? Then choose the real one." },
-      { q: "Does Seven of Cups indicate addiction?", a: "It can — the card's themes of escapism, illusion, and fantasy can relate to addictive behaviors. It asks: what are you using to avoid facing reality?" },
+      { q: "Is Seven of Cups a bad card?", a: "Not inherently � it warns against illusion and wishful thinking, but it also shows the richness of imagination. The challenge is to choose one real path from the many fantasies." },
+      { q: "What do the seven cups in the clouds represent?", a: "Each cup represents a different fantasy, desire, or illusion: wealth, victory, love, danger, wisdom, mystery, and ambition. They float in clouds because none of them are yet real � they are all possibilities." },
+      { q: "I cannot make a decision. What does Seven of Cups say?", a: "Seven of Cups says: you are overwhelmed by possibilities. The solution is not more thinking � it is grounding. Ask yourself: which of these is real and which is fantasy? Then choose the real one." },
+      { q: "Does Seven of Cups indicate addiction?", a: "It can � the card's themes of escapism, illusion, and fantasy can relate to addictive behaviors. It asks: what are you using to avoid facing reality?" },
       { q: "What is the positive message of Seven of Cups?", a: "The positive message is that you have a rich imagination and many possibilities before you. The key is to use that imagination to envision what you truly want, then take one concrete step toward making it real." }
     ]
   }
+];
+
+// ── Remaining Cups (8–14) ──
+const cupsCards2 = [
+  { id: 29, name: "Eight of Cups", number: "8", arcana: "Minor", suit: "Cups", image: "https://upload.wikimedia.org/wikipedia/commons/6/60/Cups08.jpg", keywords: ["Abandonment", "Withdrawal", "Seeking more"], upright: "Walking away, disillusionment, leaving behind, seeking deeper meaning", reversed: "Fear of moving on, staying in a bad situation, aimless wandering", aspects: { past: "You walked away from something that no longer served you.", present: "It is time to leave behind what no longer fulfills you, even if it is comfortable.", future: "A journey of deeper meaning awaits if you have the courage to walk away.", career: "A job or career path no longer satisfies. Consider moving on.", health: "Emotional withdrawal may be affecting your health. Seek deeper healing.", relationship: "A relationship may need to be left behind. Your soul is calling for more.", dailyGuidance: "Ask yourself: what am I staying in out of fear rather than love?" }, practiceQuestions: [{ q: "Does Eight of Cups mean a breakup?", a: "It can indicate walking away from a relationship, but more broadly it means leaving behind anything that no longer fulfills you on a soul level." }] },
+  { id: 30, name: "Nine of Cups", number: "9", arcana: "Minor", suit: "Cups", image: "https://upload.wikimedia.org/wikipedia/commons/2/24/Cups09.jpg", keywords: ["Contentment", "Satisfaction", "Wish fulfilled"], upright: "Contentment, satisfaction, gratitude, wish come true, emotional fulfillment", reversed: "Inner happiness lacking, materialism, dissatisfaction despite having much", aspects: { past: "A wish was granted or a period of deep satisfaction was experienced.", present: "Your wishes are coming true. Feel gratitude for what you have.", future: "Emotional fulfillment and the granting of a heartfelt wish is coming.", career: "Professional satisfaction and success. You will get what you have been working toward.", health: "Good health and vitality. Emotional wellbeing supports physical health.", relationship: "Deep happiness and satisfaction in love. A wish for love is being fulfilled.", dailyGuidance: "Count your blessings today. Write down three things you are genuinely grateful for." }, practiceQuestions: [{ q: "Is Nine of Cups the wish card?", a: "Yes — Nine of Cups is known as the wish card. When it appears, it often signals that a heartfelt wish is about to be granted." }] },
+  { id: 31, name: "Ten of Cups", number: "10", arcana: "Minor", suit: "Cups", image: "https://upload.wikimedia.org/wikipedia/commons/8/84/Cups10.jpg", keywords: ["Harmony", "Family", "Emotional fulfillment"], upright: "Divine love, blissful relationships, harmony, alignment, family happiness", reversed: "Broken family, domestic disharmony, disconnection from loved ones", aspects: { past: "A period of family harmony or deep emotional fulfillment shaped your foundation.", present: "You are experiencing or approaching true emotional fulfillment and family harmony.", future: "A beautiful, harmonious family life and deep emotional happiness is coming.", career: "Work-life balance and a harmonious team environment bring fulfillment.", health: "Emotional harmony directly supports physical health. Family support aids healing.", relationship: "The happiest relationship card — deep love, family, and lasting happiness.", dailyGuidance: "Appreciate the love around you today. Tell someone you love them." }, practiceQuestions: [{ q: "Is Ten of Cups the best love card?", a: "Yes — Ten of Cups represents the highest form of emotional fulfillment: lasting love, family harmony, and true happiness." }] },
+  { id: 32, name: "Page of Cups", number: "Page", arcana: "Minor", suit: "Cups", image: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Cups11.jpg", keywords: ["Creativity", "Intuition", "Sensitivity"], upright: "Creative opportunities, intuitive messages, curiosity, emotional openness", reversed: "Emotional immaturity, creative blocks, escapism", aspects: { past: "A sensitive, creative, or emotionally open phase shaped your emotional intelligence.", present: "A creative or intuitive message is coming. Stay open and curious.", future: "New creative or emotional opportunities are emerging.", career: "Creative projects and intuitive work are favored. A new creative opportunity arrives.", health: "Emotional sensitivity affects health. Honor your feelings.", relationship: "A sweet, tender, emotionally open connection. New romantic feelings emerging.", dailyGuidance: "Do something creative today with no agenda — just for the joy of it." }, practiceQuestions: [{ q: "What does Page of Cups represent as a person?", a: "A sensitive, creative, emotionally open young person — or the childlike, intuitive part of yourself." }] },
+  { id: 33, name: "Knight of Cups", number: "Knight", arcana: "Minor", suit: "Cups", image: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Cups12.jpg", keywords: ["Romance", "Charm", "Imagination"], upright: "Romance, charm, following the heart, creative vision, emotional pursuit", reversed: "Moodiness, unrealistic expectations, emotional manipulation", aspects: { past: "A romantic or idealistic pursuit defined a significant chapter.", present: "Follow your heart. A romantic or creative opportunity is presenting itself.", future: "A romantic offer or emotionally meaningful invitation is coming.", career: "A creative or passion-driven career opportunity arrives. Follow your heart.", health: "Emotional health is the priority. Follow what brings you joy.", relationship: "A romantic, charming, emotionally expressive partner or phase of romance.", dailyGuidance: "Do one thing today that your heart has been calling you toward." }, practiceQuestions: [{ q: "Is Knight of Cups a romantic card?", a: "Yes — Knight of Cups is one of the most romantic cards in tarot, often representing a charming, emotionally expressive suitor or a romantic invitation." }] },
+  { id: 34, name: "Queen of Cups", number: "Queen", arcana: "Minor", suit: "Cups", image: "https://upload.wikimedia.org/wikipedia/commons/6/62/Cups13.jpg", keywords: ["Compassion", "Empathy", "Nurturing"], upright: "Compassionate, caring, emotionally intelligent, intuitive, nurturing", reversed: "Emotional insecurity, co-dependency, giving too much", aspects: { past: "A deeply compassionate, intuitive figure or phase of emotional wisdom shaped you.", present: "Lead with compassion and emotional intelligence. Trust your intuition.", future: "Emotional wisdom and deep empathy will guide you to the right outcome.", career: "Nurturing, healing, or emotionally intelligent work is favored.", health: "Emotional self-care is essential. Nurture yourself as you nurture others.", relationship: "Deep emotional connection, empathy, and unconditional love.", dailyGuidance: "Offer compassion to someone today — including yourself." }, practiceQuestions: [{ q: "What does Queen of Cups represent?", a: "The Queen of Cups represents emotional intelligence, deep empathy, and intuitive wisdom — the most emotionally evolved energy in the deck." }] },
+  { id: 35, name: "King of Cups", number: "King", arcana: "Minor", suit: "Cups", image: "https://upload.wikimedia.org/wikipedia/commons/0/04/Cups14.jpg", keywords: ["Emotional balance", "Diplomacy", "Wisdom"], upright: "Emotionally balanced, compassionate, diplomatic, wise, in control of emotions", reversed: "Emotional manipulation, moodiness, using emotions to control others", aspects: { past: "Emotional maturity and wisdom were developed through experience.", present: "Lead with emotional balance and wisdom. Do not let emotions control you.", future: "Emotional mastery and wise leadership will bring success.", career: "Leadership through emotional intelligence and diplomacy is favored.", health: "Emotional balance is the key to physical health. Master your inner world.", relationship: "A mature, emotionally balanced, deeply loving relationship or partner.", dailyGuidance: "Respond rather than react today. Let wisdom guide your emotions." }, practiceQuestions: [{ q: "Is King of Cups a good card for relationships?", a: "Yes — King of Cups represents the ideal emotionally mature partner: loving, wise, balanced, and deeply compassionate." }] }
 ];

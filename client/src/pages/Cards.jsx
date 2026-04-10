@@ -126,9 +126,8 @@ export default function Cards() {
   };
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_API_URL}/api/tarot/cards`)
-      .then(r => setCards(r.data))
-      .catch(() => setCards(fallbackCards));
+    // Use local fallback directly — server only has Major Arcana for now
+    setCards(fallbackCards);
   }, []);
 
   const filtered = cards.filter(c => {

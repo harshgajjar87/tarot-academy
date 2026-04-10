@@ -26,9 +26,8 @@ export default function CardDetail() {
   const [flipped, setFlipped] = useState(false);
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_API_URL}/api/tarot/cards/${id}`)
-      .then(r => setCard(r.data))
-      .catch(() => setCard(localCards[parseInt(id)] || localCards[0]));
+    // Use local data directly — server minor arcana content coming later
+    setCard(localCards[parseInt(id)] || localCards[0]);
   }, [id]);
 
   if (!card) return (
