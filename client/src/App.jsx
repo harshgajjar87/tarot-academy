@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import StarField from './components/StarField';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import History from './pages/History';
 import Numerology from './pages/Numerology';
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/structure" element={<Structure />} />
         <Route path="/practice" element={<Practice />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

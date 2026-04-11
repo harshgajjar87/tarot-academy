@@ -30,7 +30,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop */}
-        <div style={{ display: 'flex', gap: '2rem' }} className="desktop-nav">
+        <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }} className="desktop-nav">
           {links.map(l => (
             <Link key={l.to} to={l.to} style={{
               textDecoration: 'none',
@@ -45,6 +45,17 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
+          <div style={{
+            borderLeft: '1px solid rgba(201,168,76,0.25)',
+            paddingLeft: '1.5rem',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-end',
+            lineHeight: 1.3,
+          }}>
+            <span className="font-cinzel" style={{ fontSize: '0.75rem', color: 'var(--gold)', letterSpacing: 2 }}>Harsh Gajjar</span>
+            <span style={{ fontSize: '0.6rem', color: 'rgba(201,168,76,0.5)', fontFamily: 'Cinzel', letterSpacing: 1 }}>Tarot Reader · CE Student</span>
+          </div>
         </div>
 
         {/* Mobile toggle */}
