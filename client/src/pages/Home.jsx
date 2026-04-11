@@ -32,11 +32,11 @@ export default function Home() {
             }}>
               The Art of Tarot
             </h1>
-            <h2 className="font-cinzel" style={{ color: 'rgba(155,89,182,1)', fontSize: 'clamp(1rem, 2.5vw, 1.6rem)', letterSpacing: 4, marginBottom: '1.5rem', fontWeight: 400, textShadow: '0 2px 20px rgba(0,0,0,0.9)' }}>
+            <h2 className="font-cinzel" style={{ color: '#e8c97a', fontSize: 'clamp(1rem, 2.5vw, 1.6rem)', letterSpacing: 4, marginBottom: '1.5rem', fontWeight: 400, textShadow: '0 2px 20px rgba(0,0,0,0.9), 0 0 30px rgba(201,168,76,0.4)' }}>
               Rider-Waite Complete Course
             </h2>
             <div className="divider-gold" style={{ maxWidth: 500, margin: '0 auto 1.5rem' }} />
-            <p style={{ maxWidth: 560, margin: '0 auto', color: 'rgba(232,213,183,0.95)', lineHeight: 2, fontSize: '1.05rem', textShadow: '0 1px 12px rgba(0,0,0,0.9)' }}>
+            <p style={{ maxWidth: 560, margin: '0 auto', color: '#f0e6cc', lineHeight: 2, fontSize: '1.05rem', textShadow: '0 1px 12px rgba(0,0,0,0.9)' }}>
               Journey through the 78 sacred cards. Master history, symbolism, numerology,
               color language, and the 7 aspects of every card — from Past to Daily Guidance.
             </p>
@@ -72,7 +72,7 @@ export default function Home() {
                 <div className="glass-card" style={{ padding: '2rem', textAlign: 'center', cursor: 'pointer', transition: 'all 0.4s', borderColor: `${f.color}33`, height: '100%' }}>
                   <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{f.icon}</div>
                   <h3 className="font-cinzel" style={{ color: f.color, marginBottom: '0.75rem', fontSize: '1rem', letterSpacing: 1 }}>{f.title}</h3>
-                  <p style={{ color: 'rgba(232,213,183,0.65)', fontSize: '0.9rem', lineHeight: 1.8 }}>{f.desc}</p>
+                  <p style={{ color: 'rgba(232,213,183,0.9)', fontSize: '0.9rem', lineHeight: 1.8 }}>{f.desc}</p>
                 </div>
               </Link>
             </motion.div>
@@ -85,7 +85,7 @@ export default function Home() {
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 className="font-cinzel" style={{ color: 'var(--gold)', fontSize: 'clamp(1.4rem, 3vw, 2rem)', letterSpacing: 3, marginBottom: '0.75rem' }}>✦ The Four Suits ✦</h2>
-            <p style={{ color: 'rgba(232,213,183,0.6)', maxWidth: 500, margin: '0 auto', lineHeight: 1.8 }}>Each suit governs a domain of human experience — fire, water, air, and earth.</p>
+            <p style={{ color: 'rgba(232,213,183,0.9)', maxWidth: 500, margin: '0 auto', lineHeight: 1.8 }}>Each suit governs a domain of human experience — fire, water, air, and earth.</p>
             <div className="divider-gold" style={{ maxWidth: 300, margin: '1rem auto 0' }} />
           </motion.div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem' }}>
@@ -100,8 +100,8 @@ export default function Home() {
                   <div className="glass-card" style={{ padding: '2rem', textAlign: 'center', borderColor: `${s.color}33`, cursor: 'pointer' }}>
                     <div style={{ fontSize: '2.8rem', marginBottom: '0.75rem' }}>{s.icon}</div>
                     <h3 className="font-cinzel" style={{ color: s.color, fontSize: '1.1rem', letterSpacing: 2, marginBottom: '0.3rem' }}>{s.suit}</h3>
-                    <p style={{ color: 'rgba(201,168,76,0.5)', fontSize: '0.75rem', fontFamily: 'Cinzel', letterSpacing: 2, marginBottom: '0.75rem' }}>{s.element}</p>
-                    <p style={{ color: 'rgba(232,213,183,0.65)', fontSize: '0.88rem', lineHeight: 1.7 }}>{s.theme}</p>
+                    <p style={{ color: 'rgba(201,168,76,0.85)', fontSize: '0.75rem', fontFamily: 'Cinzel', letterSpacing: 2, marginBottom: '0.75rem' }}>{s.element}</p>
+                    <p style={{ color: 'rgba(232,213,183,0.9)', fontSize: '0.88rem', lineHeight: 1.7 }}>{s.theme}</p>
                   </div>
                 </Link>
               </motion.div>
@@ -114,7 +114,7 @@ export default function Home() {
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '5rem 2rem' }}>
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <h2 className="font-cinzel" style={{ color: 'var(--gold)', fontSize: 'clamp(1.4rem, 3vw, 2rem)', letterSpacing: 3, marginBottom: '0.75rem' }}>✦ The Major Arcana ✦</h2>
-          <p style={{ color: 'rgba(232,213,183,0.6)', maxWidth: 600, margin: '0 auto', lineHeight: 1.9 }}>
+          <p style={{ color: 'rgba(232,213,183,0.9)', maxWidth: 600, margin: '0 auto', lineHeight: 1.9 }}>
             22 cards that map the soul's journey — from The Fool's first step to The World's completion. Each card is an archetype, a mirror, and a teacher.
           </p>
           <div className="divider-gold" style={{ maxWidth: 300, margin: '1rem auto 0' }} />
@@ -126,7 +126,7 @@ export default function Home() {
             { name: 'High Priestess', num: 'II', img: 'https://upload.wikimedia.org/wikipedia/commons/8/88/RWS_Tarot_02_High_Priestess.jpg', id: 2 },
             { name: 'The Empress', num: 'III', img: 'https://upload.wikimedia.org/wikipedia/commons/d/d2/RWS_Tarot_03_Empress.jpg', id: 3 },
             { name: 'The Emperor', num: 'IV', img: 'https://upload.wikimedia.org/wikipedia/commons/c/c3/RWS_Tarot_04_Emperor.jpg', id: 4 },
-            { name: 'The Lovers', num: 'VI', img: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/RWS_Tarot_06_Lovers.jpg', id: 6 },
+            { name: 'The Lovers', num: 'VI', img: 'https://upload.wikimedia.org/wikipedia/commons/d/db/RWS_Tarot_06_Lovers.jpg', id: 6 },
             { name: 'The Chariot', num: 'VII', img: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/RWS_Tarot_07_Chariot.jpg', id: 7 },
             { name: 'The Star', num: 'XVII', img: 'https://upload.wikimedia.org/wikipedia/commons/d/db/RWS_Tarot_17_Star.jpg', id: 17 },
           ].map((card, i) => (
@@ -159,7 +159,7 @@ export default function Home() {
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div style={{ fontSize: '3.5rem', marginBottom: '1.5rem' }}>🃏</div>
             <h2 className="font-cinzel" style={{ color: 'var(--gold)', fontSize: 'clamp(1.4rem, 3vw, 2rem)', letterSpacing: 3, marginBottom: '1rem' }}>Ready to Practice?</h2>
-            <p style={{ color: 'rgba(232,213,183,0.7)', lineHeight: 1.9, fontSize: '1rem', marginBottom: '2rem' }}>
+            <p style={{ color: 'rgba(232,213,183,0.92)', lineHeight: 1.9, fontSize: '1rem', marginBottom: '2rem' }}>
               Six interactive spreads — from a single daily card to the full 12-card yearly reading and the classic Celtic Cross. Draw, flip, and read.
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>

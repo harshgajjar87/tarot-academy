@@ -37,7 +37,7 @@ export default function Navbar() {
               fontFamily: 'Cinzel, serif',
               fontSize: '0.8rem',
               letterSpacing: 2,
-              color: pathname === l.to ? 'var(--gold)' : 'rgba(232,213,183,0.7)',
+              color: pathname === l.to ? 'var(--gold)' : 'rgba(240,230,208,0.95)',
               borderBottom: pathname === l.to ? '1px solid var(--gold)' : '1px solid transparent',
               paddingBottom: 4,
               transition: 'all 0.3s',

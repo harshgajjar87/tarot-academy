@@ -8,6 +8,24 @@ export default function StarField() {
     const ctx = canvas.getContext('2d');
     let animId;
 
+    // Mouse/touch parallax offset (smoothly interpolated)
+    const mouse = { x: 0, y: 0 };
+    const offset = { x: 0, y: 0 };
+    const PARALLAX_STRENGTH = 40; // max px shift
+
+    const onMouseMove = (e) => {
+      mouse.x = (e.clientX / window.innerWidth - 0.5) * 2;  // -1 to 1
+      mouse.y = (e.clientY / window.innerHeight - 0.5) * 2;
+    };
+    const onTouchMove = (e) => {
+      if (e.touches.length > 0) {
+        mouse.x = (e.touches[0].clientX / window.innerWidth - 0.5) * 2;
+        mouse.y = (e.touches[0].clientY / window.innerHeight - 0.5) * 2;
+      }
+    };
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('touchmove', onTouchMove, { passive: true });
+
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -23,6 +41,8 @@ export default function StarField() {
       opacity: Math.random(),
       twinkleSpeed: Math.random() * 0.02 + 0.005,
       twinkleDir: Math.random() > 0.5 ? 1 : -1,
+      // depth layer 0.2–1.0: deeper stars move less
+      depth: Math.random() * 0.8 + 0.2,
     }));
 
     const shootingStars = [];
@@ -42,11 +62,18 @@ export default function StarField() {
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+      // Smooth lerp toward mouse position
+      offset.x += (mouse.x * PARALLAX_STRENGTH - offset.x) * 0.05;
+      offset.y += (mouse.y * PARALLAX_STRENGTH - offset.y) * 0.05;
+
       stars.forEach(s => {
         s.opacity += s.twinkleSpeed * s.twinkleDir;
         if (s.opacity >= 1 || s.opacity <= 0.1) s.twinkleDir *= -1;
+        // Apply parallax: stars with higher depth move more
+        const px = s.x + offset.x * s.depth;
+        const py = s.y + offset.y * s.depth;
         ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.arc(px, py, s.r, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(255,248,220,${s.opacity})`;
         ctx.fill();
       });
@@ -73,7 +100,7 @@ export default function StarField() {
     };
     draw();
 
-    return () => { cancelAnimationFrame(animId); window.removeEventListener('resize', resize); };
+    return () => { cancelAnimationFrame(animId); window.removeEventListener('resize', resize); window.removeEventListener('mousemove', onMouseMove); window.removeEventListener('touchmove', onTouchMove); };
   }, []);
 
   return (

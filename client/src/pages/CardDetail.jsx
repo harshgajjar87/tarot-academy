@@ -1,13 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import axios from 'axios';
-import { localCards as localCardsArray } from '../data/localCards';
-
-const localCards = Object.fromEntries(localCardsArray.map(c => [c.id, c]));
+import { allCards } from '../data/allCards';
 
 // Only these IDs are accessible to regular users
-const UNLOCKED_IDS = new Set([0, 36]);
+const UNLOCKED_IDS = new Set([0, 22, 36, 50, 64]);
 
 const aspectIcons = {
   past: { icon: '⏮', label: 'Past', color: '#9b59b6' },
@@ -26,8 +23,7 @@ export default function CardDetail() {
   const [flipped, setFlipped] = useState(false);
 
   useEffect(() => {
-    // Use local data directly — server minor arcana content coming later
-    setCard(localCards[parseInt(id)] || localCards[0]);
+    setCard(allCards[parseInt(id)] || allCards[0]);
   }, [id]);
 
   if (!card) return (
@@ -45,13 +41,16 @@ export default function CardDetail() {
           className="glass-card" style={{ maxWidth: 460, width: '100%', padding: '3rem', textAlign: 'center' }}>
           <div style={{ fontSize: '4rem', marginBottom: '1.5rem' }}>🔒</div>
           <h2 className="font-cinzel" style={{ color: 'var(--gold)', fontSize: '1.4rem', letterSpacing: 2, marginBottom: '1rem' }}>Admin Access Only</h2>
-          <p style={{ color: 'rgba(232,213,183,0.7)', lineHeight: 1.9, fontSize: '0.95rem', marginBottom: '2rem' }}>
+          <p style={{ color: 'rgba(232,213,183,0.85)', lineHeight: 1.9, fontSize: '0.95rem', marginBottom: '2rem' }}>
             This card's full reading is reserved for admin access only.<br />
-            The free preview cards are <strong style={{ color: 'var(--gold)' }}>The Fool</strong> and <strong style={{ color: 'var(--gold)' }}>Ace of Cups</strong>.
+            The free preview cards are <strong style={{ color: 'var(--gold)' }}>The Fool</strong>, <strong style={{ color: 'var(--gold)' }}>Ace of Wands</strong>, <strong style={{ color: 'var(--gold)' }}>Ace of Cups</strong>, <strong style={{ color: 'var(--gold)' }}>Ace of Swords</strong>, and <strong style={{ color: 'var(--gold)' }}>Ace of Pentacles</strong>.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/cards/0"><button className="btn-mystical">The Fool</button></Link>
+            <Link to="/cards/22"><button className="btn-mystical">Ace of Wands</button></Link>
             <Link to="/cards/36"><button className="btn-mystical">Ace of Cups</button></Link>
+            <Link to="/cards/50"><button className="btn-mystical">Ace of Swords</button></Link>
+            <Link to="/cards/64"><button className="btn-mystical">Ace of Pentacles</button></Link>
             <Link to="/cards"><button className="btn-mystical" style={{ borderColor: 'rgba(201,168,76,0.3)', color: 'rgba(201,168,76,0.5)' }}>← All Cards</button></Link>
           </div>
         </motion.div>

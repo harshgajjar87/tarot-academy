@@ -1,97 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import axios from 'axios';
+import allCardsArray from '../data/allCards';
 
-// Fallback local data — all 78 cards
-const fallbackCards = [
-  // Major Arcana (0–21)
-  { id: 0, name: "The Fool", number: "0", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/9/90/RWS_Tarot_00_Fool.jpg", keywords: ["New beginnings", "Innocence", "Leap of faith"] },
-  { id: 1, name: "The Magician", number: "I", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg", keywords: ["Willpower", "Manifestation", "Skill"] },
-  { id: 2, name: "The High Priestess", number: "II", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/8/88/RWS_Tarot_02_High_Priestess.jpg", keywords: ["Intuition", "Mystery", "Inner knowing"] },
-  { id: 3, name: "The Empress", number: "III", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/d/d2/RWS_Tarot_03_Empress.jpg", keywords: ["Fertility", "Abundance", "Nurturing"] },
-  { id: 4, name: "The Emperor", number: "IV", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/c/c3/RWS_Tarot_04_Emperor.jpg", keywords: ["Authority", "Structure", "Leadership"] },
-  { id: 5, name: "The Hierophant", number: "V", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/8/8d/RWS_Tarot_05_Hierophant.jpg", keywords: ["Tradition", "Spiritual guidance", "Institutions"] },
-  { id: 6, name: "The Lovers", number: "VI", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/3/3a/RWS_Tarot_06_Lovers.jpg", keywords: ["Love", "Union", "Choices"] },
-  { id: 7, name: "The Chariot", number: "VII", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/9/9b/RWS_Tarot_07_Chariot.jpg", keywords: ["Victory", "Control", "Willpower"] },
-  { id: 8, name: "Strength", number: "VIII", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/f/f6/RWS_Tarot_08_Strength.jpg", keywords: ["Inner strength", "Courage", "Compassion"] },
-  { id: 9, name: "The Hermit", number: "IX", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/4/4d/RWS_Tarot_09_Hermit.jpg", keywords: ["Solitude", "Inner guidance", "Wisdom"] },
-  { id: 10, name: "Wheel of Fortune", number: "X", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/3/3c/RWS_Tarot_10_Wheel_of_Fortune.jpg", keywords: ["Cycles", "Fate", "Luck"] },
-  { id: 11, name: "Justice", number: "XI", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/e/e0/RWS_Tarot_11_Justice.jpg", keywords: ["Fairness", "Truth", "Law"] },
-  { id: 12, name: "The Hanged Man", number: "XII", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/2/2b/RWS_Tarot_12_Hanged_Man.jpg", keywords: ["Surrender", "Pause", "New perspective"] },
-  { id: 13, name: "Death", number: "XIII", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/d/d7/RWS_Tarot_13_Death.jpg", keywords: ["Transformation", "Endings", "Change"] },
-  { id: 14, name: "Temperance", number: "XIV", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/f/f8/RWS_Tarot_14_Temperance.jpg", keywords: ["Balance", "Moderation", "Patience"] },
-  { id: 15, name: "The Devil", number: "XV", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/5/55/RWS_Tarot_15_Devil.jpg", keywords: ["Shadow self", "Addiction", "Bondage"] },
-  { id: 16, name: "The Tower", number: "XVI", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/5/53/RWS_Tarot_16_Tower.jpg", keywords: ["Upheaval", "Revelation", "Chaos"] },
-  { id: 17, name: "The Star", number: "XVII", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/d/db/RWS_Tarot_17_Star.jpg", keywords: ["Hope", "Renewal", "Inspiration"] },
-  { id: 18, name: "The Moon", number: "XVIII", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/7/7f/RWS_Tarot_18_Moon.jpg", keywords: ["Illusion", "Subconscious", "Confusion"] },
-  { id: 19, name: "The Sun", number: "XIX", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/1/17/RWS_Tarot_19_Sun.jpg", keywords: ["Joy", "Success", "Vitality"] },
-  { id: 20, name: "Judgement", number: "XX", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/d/dd/RWS_Tarot_20_Judgement.jpg", keywords: ["Awakening", "Rebirth", "Calling"] },
-  { id: 21, name: "The World", number: "XXI", arcana: "Major", suit: null, image: "https://upload.wikimedia.org/wikipedia/commons/f/ff/RWS_Tarot_21_World.jpg", keywords: ["Completion", "Wholeness", "Integration"] },
-  // Minor Arcana — Wands (22–35)
-  { id: 22, name: "Ace of Wands", number: "Ace", arcana: "Minor", suit: "Wands", image: "https://upload.wikimedia.org/wikipedia/commons/1/11/Wands01.jpg", keywords: ["Inspiration", "New venture", "Spark"] },
-  { id: 23, name: "Two of Wands", number: "2", arcana: "Minor", suit: "Wands", image: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Wands02.jpg", keywords: ["Planning", "Future vision", "Discovery"] },
-  { id: 24, name: "Three of Wands", number: "3", arcana: "Minor", suit: "Wands", image: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Wands03.jpg", keywords: ["Expansion", "Foresight", "Progress"] },
-  { id: 25, name: "Four of Wands", number: "4", arcana: "Minor", suit: "Wands", image: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Wands04.jpg", keywords: ["Celebration", "Harmony", "Homecoming"] },
-  { id: 26, name: "Five of Wands", number: "5", arcana: "Minor", suit: "Wands", image: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Wands05.jpg", keywords: ["Conflict", "Competition", "Tension"] },
-  { id: 27, name: "Six of Wands", number: "6", arcana: "Minor", suit: "Wands", image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Wands06.jpg", keywords: ["Victory", "Recognition", "Success"] },
-  { id: 28, name: "Seven of Wands", number: "7", arcana: "Minor", suit: "Wands", image: "https://upload.wikimedia.org/wikipedia/commons/e/e4/Wands07.jpg", keywords: ["Perseverance", "Defense", "Challenge"] },
-  { id: 29, name: "Eight of Wands", number: "8", arcana: "Minor", suit: "Wands", image: "https://upload.wikimedia.org/wikipedia/commons/6/6b/Wands08.jpg", keywords: ["Speed", "Action", "Movement"] },
-  { id: 30, name: "Nine of Wands", number: "9", arcana: "Minor", suit: "Wands", image: "https://upload.wikimedia.org/wikipedia/commons/4/4d/Tarot_Nine_of_Wands.jpg", keywords: ["Resilience", "Persistence", "Last stand"] },
-  { id: 31, name: "Ten of Wands", number: "10", arcana: "Minor", suit: "Wands", image: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Wands10.jpg", keywords: ["Burden", "Responsibility", "Overwhelm"] },
-  { id: 32, name: "Page of Wands", number: "Page", arcana: "Minor", suit: "Wands", image: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Wands11.jpg", keywords: ["Enthusiasm", "Exploration", "Free spirit"] },
-  { id: 33, name: "Knight of Wands", number: "Knight", arcana: "Minor", suit: "Wands", image: "https://upload.wikimedia.org/wikipedia/commons/1/16/Wands12.jpg", keywords: ["Energy", "Passion", "Adventure"] },
-  { id: 34, name: "Queen of Wands", number: "Queen", arcana: "Minor", suit: "Wands", image: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Wands13.jpg", keywords: ["Confidence", "Determination", "Charisma"] },
-  { id: 35, name: "King of Wands", number: "King", arcana: "Minor", suit: "Wands", image: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Wands14.jpg", keywords: ["Leadership", "Vision", "Entrepreneur"] },
-  // Minor Arcana — Cups (36–49)
-  { id: 36, name: "Ace of Cups", number: "Ace", arcana: "Minor", suit: "Cups", image: "https://upload.wikimedia.org/wikipedia/commons/3/36/Cups01.jpg", keywords: ["New love", "Intuition", "Emotional opening"] },
-  { id: 37, name: "Two of Cups", number: "2", arcana: "Minor", suit: "Cups", image: "https://upload.wikimedia.org/wikipedia/commons/f/f8/Cups02.jpg", keywords: ["Partnership", "Attraction", "Connection"] },
-  { id: 38, name: "Three of Cups", number: "3", arcana: "Minor", suit: "Cups", image: "https://upload.wikimedia.org/wikipedia/commons/7/7a/Cups03.jpg", keywords: ["Celebration", "Friendship", "Community"] },
-  { id: 39, name: "Four of Cups", number: "4", arcana: "Minor", suit: "Cups", image: "https://upload.wikimedia.org/wikipedia/commons/3/35/Cups04.jpg", keywords: ["Apathy", "Contemplation", "Discontent"] },
-  { id: 40, name: "Five of Cups", number: "5", arcana: "Minor", suit: "Cups", image: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Cups05.jpg", keywords: ["Loss", "Grief", "Regret"] },
-  { id: 41, name: "Six of Cups", number: "6", arcana: "Minor", suit: "Cups", image: "https://upload.wikimedia.org/wikipedia/commons/1/17/Cups06.jpg", keywords: ["Nostalgia", "Innocence", "Reunion"] },
-  { id: 42, name: "Seven of Cups", number: "7", arcana: "Minor", suit: "Cups", image: "https://upload.wikimedia.org/wikipedia/commons/a/ae/Cups07.jpg", keywords: ["Illusion", "Fantasy", "Choices"] },
-  { id: 43, name: "Eight of Cups", number: "8", arcana: "Minor", suit: "Cups", image: "https://upload.wikimedia.org/wikipedia/commons/6/60/Cups08.jpg", keywords: ["Abandonment", "Withdrawal", "Seeking more"] },
-  { id: 44, name: "Nine of Cups", number: "9", arcana: "Minor", suit: "Cups", image: "https://upload.wikimedia.org/wikipedia/commons/2/24/Cups09.jpg", keywords: ["Contentment", "Satisfaction", "Wish fulfilled"] },
-  { id: 45, name: "Ten of Cups", number: "10", arcana: "Minor", suit: "Cups", image: "https://upload.wikimedia.org/wikipedia/commons/8/84/Cups10.jpg", keywords: ["Harmony", "Family", "Emotional fulfillment"] },
-  { id: 46, name: "Page of Cups", number: "Page", arcana: "Minor", suit: "Cups", image: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Cups11.jpg", keywords: ["Creativity", "Intuition", "Sensitivity"] },
-  { id: 47, name: "Knight of Cups", number: "Knight", arcana: "Minor", suit: "Cups", image: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Cups12.jpg", keywords: ["Romance", "Charm", "Imagination"] },
-  { id: 48, name: "Queen of Cups", number: "Queen", arcana: "Minor", suit: "Cups", image: "https://upload.wikimedia.org/wikipedia/commons/6/62/Cups13.jpg", keywords: ["Compassion", "Empathy", "Nurturing"] },
-  { id: 49, name: "King of Cups", number: "King", arcana: "Minor", suit: "Cups", image: "https://upload.wikimedia.org/wikipedia/commons/0/04/Cups14.jpg", keywords: ["Emotional balance", "Diplomacy", "Wisdom"] },
-  // Minor Arcana — Swords (50–63)
-  { id: 50, name: "Ace of Swords", number: "Ace", arcana: "Minor", suit: "Swords", image: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Swords01.jpg", keywords: ["Clarity", "Truth", "Breakthrough"] },
-  { id: 51, name: "Two of Swords", number: "2", arcana: "Minor", suit: "Swords", image: "https://upload.wikimedia.org/wikipedia/commons/9/9e/Swords02.jpg", keywords: ["Indecision", "Stalemate", "Blocked emotions"] },
-  { id: 52, name: "Three of Swords", number: "3", arcana: "Minor", suit: "Swords", image: "https://upload.wikimedia.org/wikipedia/commons/0/02/Swords03.jpg", keywords: ["Heartbreak", "Grief", "Sorrow"] },
-  { id: 53, name: "Four of Swords", number: "4", arcana: "Minor", suit: "Swords", image: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Swords04.jpg", keywords: ["Rest", "Recovery", "Contemplation"] },
-  { id: 54, name: "Five of Swords", number: "5", arcana: "Minor", suit: "Swords", image: "https://upload.wikimedia.org/wikipedia/commons/2/23/Swords05.jpg", keywords: ["Conflict", "Defeat", "Hollow victory"] },
-  { id: 55, name: "Six of Swords", number: "6", arcana: "Minor", suit: "Swords", image: "https://upload.wikimedia.org/wikipedia/commons/2/29/Swords06.jpg", keywords: ["Transition", "Moving on", "Calmer waters"] },
-  { id: 56, name: "Seven of Swords", number: "7", arcana: "Minor", suit: "Swords", image: "https://upload.wikimedia.org/wikipedia/commons/3/34/Swords07.jpg", keywords: ["Deception", "Strategy", "Stealth"] },
-  { id: 57, name: "Eight of Swords", number: "8", arcana: "Minor", suit: "Swords", image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/Swords08.jpg", keywords: ["Restriction", "Trapped", "Victim mentality"] },
-  { id: 58, name: "Nine of Swords", number: "9", arcana: "Minor", suit: "Swords", image: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Swords09.jpg", keywords: ["Anxiety", "Nightmares", "Despair"] },
-  { id: 59, name: "Ten of Swords", number: "10", arcana: "Minor", suit: "Swords", image: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Swords10.jpg", keywords: ["Painful ending", "Betrayal", "Rock bottom"] },
-  { id: 60, name: "Page of Swords", number: "Page", arcana: "Minor", suit: "Swords", image: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Swords11.jpg", keywords: ["Curiosity", "Vigilance", "Mental agility"] },
-  { id: 61, name: "Knight of Swords", number: "Knight", arcana: "Minor", suit: "Swords", image: "https://upload.wikimedia.org/wikipedia/commons/b/b0/Swords12.jpg", keywords: ["Ambition", "Action", "Impulsiveness"] },
-  { id: 62, name: "Queen of Swords", number: "Queen", arcana: "Minor", suit: "Swords", image: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Swords13.jpg", keywords: ["Independence", "Clarity", "Direct communication"] },
-  { id: 63, name: "King of Swords", number: "King", arcana: "Minor", suit: "Swords", image: "https://upload.wikimedia.org/wikipedia/commons/3/33/Swords14.jpg", keywords: ["Authority", "Truth", "Intellectual power"] },
-  // Minor Arcana — Pentacles (64–77)
-  { id: 64, name: "Ace of Pentacles", number: "Ace", arcana: "Minor", suit: "Pentacles", image: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Pents01.jpg", keywords: ["Opportunity", "Prosperity", "New financial start"] },
-  { id: 65, name: "Two of Pentacles", number: "2", arcana: "Minor", suit: "Pentacles", image: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Pents02.jpg", keywords: ["Balance", "Adaptability", "Juggling priorities"] },
-  { id: 66, name: "Three of Pentacles", number: "3", arcana: "Minor", suit: "Pentacles", image: "https://upload.wikimedia.org/wikipedia/commons/4/42/Pents03.jpg", keywords: ["Teamwork", "Skill", "Craftsmanship"] },
-  { id: 67, name: "Four of Pentacles", number: "4", arcana: "Minor", suit: "Pentacles", image: "https://upload.wikimedia.org/wikipedia/commons/3/35/Pents04.jpg", keywords: ["Security", "Control", "Possessiveness"] },
-  { id: 68, name: "Five of Pentacles", number: "5", arcana: "Minor", suit: "Pentacles", image: "https://upload.wikimedia.org/wikipedia/commons/9/96/Pents05.jpg", keywords: ["Hardship", "Poverty", "Isolation"] },
-  { id: 69, name: "Six of Pentacles", number: "6", arcana: "Minor", suit: "Pentacles", image: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Pents06.jpg", keywords: ["Generosity", "Charity", "Giving and receiving"] },
-  { id: 70, name: "Seven of Pentacles", number: "7", arcana: "Minor", suit: "Pentacles", image: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Pents07.jpg", keywords: ["Patience", "Investment", "Long-term vision"] },
-  { id: 71, name: "Eight of Pentacles", number: "8", arcana: "Minor", suit: "Pentacles", image: "https://upload.wikimedia.org/wikipedia/commons/4/49/Pents08.jpg", keywords: ["Diligence", "Mastery", "Skill development"] },
-  { id: 72, name: "Nine of Pentacles", number: "9", arcana: "Minor", suit: "Pentacles", image: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Pents09.jpg", keywords: ["Abundance", "Independence", "Self-sufficiency"] },
-  { id: 73, name: "Ten of Pentacles", number: "10", arcana: "Minor", suit: "Pentacles", image: "https://upload.wikimedia.org/wikipedia/commons/4/42/Pents10.jpg", keywords: ["Legacy", "Family wealth", "Long-term success"] },
-  { id: 74, name: "Page of Pentacles", number: "Page", arcana: "Minor", suit: "Pentacles", image: "https://upload.wikimedia.org/wikipedia/commons/e/ec/Pents11.jpg", keywords: ["Ambition", "Diligence", "New skills"] },
-  { id: 75, name: "Knight of Pentacles", number: "Knight", arcana: "Minor", suit: "Pentacles", image: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Pents12.jpg", keywords: ["Reliability", "Hard work", "Patience"] },
-  { id: 76, name: "Queen of Pentacles", number: "Queen", arcana: "Minor", suit: "Pentacles", image: "https://upload.wikimedia.org/wikipedia/commons/8/88/Pents13.jpg", keywords: ["Nurturing", "Practicality", "Financial security"] },
-  { id: 77, name: "King of Pentacles", number: "King", arcana: "Minor", suit: "Pentacles", image: "https://upload.wikimedia.org/wikipedia/commons/1/1c/Pents14.jpg", keywords: ["Wealth", "Business", "Abundance"] },
-];
 
 // Only these card IDs are accessible to regular users
-const UNLOCKED_IDS = new Set([0, 36]); // The Fool, Ace of Cups
+const UNLOCKED_IDS = new Set([0, 22, 36, 50, 64]); // The Fool + all 4 Aces
 
 const ADMIN_USER = import.meta.env.VITE_ADMIN_USER;
 const ADMIN_PASS = import.meta.env.VITE_ADMIN_PASS;
@@ -127,7 +41,7 @@ export default function Cards() {
 
   useEffect(() => {
     // Use local fallback directly — server only has Major Arcana for now
-    setCards(fallbackCards);
+    setCards(allCardsArray);
   }, []);
 
   const filtered = cards.filter(c => {
@@ -227,7 +141,7 @@ export default function Cards() {
                         <h3 className="font-cinzel" style={{ color: 'var(--gold)', fontSize: '0.9rem', marginBottom: '0.5rem', letterSpacing: 1 }}>{card.name}</h3>
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem' }}>
                           {(card.keywords || []).slice(0, 2).map((k, j) => (
-                            <span key={j} style={{ fontSize: '0.7rem', color: 'rgba(232,213,183,0.6)', background: 'rgba(201,168,76,0.1)', borderRadius: 10, padding: '2px 8px' }}>{k}</span>
+                            <span key={j} style={{ fontSize: '0.7rem', color: 'rgba(240,230,208,0.85)', background: 'rgba(201,168,76,0.1)', borderRadius: 10, padding: '2px 8px' }}>{k}</span>
                           ))}
                         </div>
                       </div>
@@ -271,7 +185,7 @@ export default function Cards() {
               <h3 className="font-cinzel" style={{ color: 'var(--gold)', fontSize: '1.2rem', letterSpacing: 2, marginBottom: '1rem' }}>Admin Access Only</h3>
               <p style={{ color: 'rgba(232,213,183,0.7)', lineHeight: 1.8, fontSize: '0.9rem', marginBottom: '1.5rem' }}>
                 This card's full reading is reserved for admin access. 
-                Explore <strong style={{ color: 'var(--gold)' }}>The Fool</strong> and <strong style={{ color: 'var(--gold)' }}>Ace of Cups</strong> — available free for everyone.
+                Explore <strong style={{ color: 'var(--gold)' }}>The Fool</strong>, <strong style={{ color: 'var(--gold)' }}>Ace of Wands</strong>, <strong style={{ color: 'var(--gold)' }}>Ace of Cups</strong>, <strong style={{ color: 'var(--gold)' }}>Ace of Swords</strong>, and <strong style={{ color: 'var(--gold)' }}>Ace of Pentacles</strong> — available free for everyone.
               </p>
               <button className="btn-mystical" onClick={() => setLockedModal(false)}>Close</button>
             </motion.div>
