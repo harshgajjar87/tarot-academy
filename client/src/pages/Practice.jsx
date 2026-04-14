@@ -122,9 +122,9 @@ const SPREADS = [
     positions: [
       { label: 'You', desc: 'Your energy, feelings, and role in this relationship.' },
       { label: 'Them', desc: 'Their energy, feelings, and role in this relationship.' },
-      { label: 'The Bond', desc: 'What connects you — the heart of the relationship.' },
+      { label: 'Current Energy', desc: 'What connects you — the heart of the relationship.' },
       { label: 'The Challenge', desc: 'The main obstacle or tension between you.' },
-      { label: 'Path Forward', desc: 'Where this relationship is heading and what to do.' }
+      { label: 'Guidence', desc: 'Where this relationship is heading and what to do.' }
     ],
     usedFor: 'Romantic relationships, new love, deepening connection'
   },
@@ -217,12 +217,13 @@ function TarotFlipCard({ card, position, isRevealed, onClick, index }) {
         </motion.div>
       </div>
 
-      {/* Only card name after reveal — nothing else */}
+      {/* Card name + keywords + position desc after reveal */}
       <AnimatePresence>
         {isRevealed && card && (
           <motion.div initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }} style={{ textAlign: 'center', maxWidth: 220 }}>
             <div style={{ fontFamily: 'Cinzel', fontSize: '0.8rem', color: 'var(--gold)', lineHeight: 1.4 }}>{card.name}</div>
-            <div style={{ fontSize: '0.7rem', color: 'rgba(232,213,183,0.5)', marginTop: '0.2rem' }}>{card.keywords}</div>
+            <div style={{ fontSize: '0.7rem', color: 'rgba(232,213,183,0.55)', marginTop: '0.2rem' }}>{card.keywords}</div>
+            <div style={{ fontSize: '0.72rem', color: 'rgba(232,213,183,0.75)', marginTop: '0.5rem', lineHeight: 1.6, fontStyle: 'italic' }}>{position.desc}</div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -261,7 +262,7 @@ function ReadingResult({ spread, drawnCards, onReset }) {
                 {isActive && (
                   <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}
                     style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid rgba(201,168,76,0.15)' }}>
-                    <p style={{ fontSize: '0.85rem', color: 'rgba(232,213,183,0.8)', lineHeight: 1.7 }}>
+                    <p style={{ fontSize: '0.85rem', color: 'rgba(232,213,183,0.85)', lineHeight: 1.7 }}>
                       <span style={{ color: 'var(--gold)' }}>Position: </span>{pos.desc}
                     </p>
                     <p style={{ fontSize: '0.85rem', color: 'rgba(232,213,183,0.7)', lineHeight: 1.7, marginTop: '0.5rem' }}>

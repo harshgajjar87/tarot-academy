@@ -1,7 +1,51 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { allCards } from '../data/allCards';
+
+const LANGS = [
+  { code: 'en', label: 'EN', full: 'English' },
+  { code: 'hi', label: 'हि', full: 'Hindi' },
+  { code: 'gu', label: 'ગુ', full: 'Gujarati' },
+];
+
+// Translate a single string via MyMemory free API
+async function translateText(text, targetLang) {
+  if (!text || targetLang === 'en') return text;
+  try {
+    const res = await fetch(
+      `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|${targetLang}`
+    );
+    const data = await res.json();
+    return data?.responseData?.translatedText || text;
+  } catch {
+    return text;
+  }
+}
+
+// Translate an array of strings
+async function translateArray(arr, targetLang) {
+  if (!arr || targetLang === 'en') return arr;
+  return Promise.all(arr.map(s => translateText(s, targetLang)));
+}
+
+// Translate aspects object
+async function translateAspects(aspects, targetLang) {
+  if (!aspects || targetLang === 'en') return aspects;
+  const entries = await Promise.all(
+    Object.entries(aspects).map(async ([k, v]) => [k, await translateText(v, targetLang)])
+  );
+  return Object.fromEntries(entries);
+}
+
+// Translate practiceQuestions array
+async function translatePracticeQuestions(pqs, targetLang) {
+  if (!pqs || targetLang === 'en') return pqs;
+  return Promise.all(pqs.map(async pq => ({
+    q: await translateText(pq.q, targetLang),
+    a: await translateText(pq.a, targetLang),
+  })));
+}
 
 // Only these IDs are accessible to regular users
 const UNLOCKED_IDS = new Set([0, 22, 36, 50, 64]);
@@ -21,10 +65,37 @@ export default function CardDetail() {
   const [card, setCard] = useState(null);
   const [activeQ, setActiveQ] = useState(null);
   const [flipped, setFlipped] = useState(false);
+  const [lang, setLang] = useState('en');
+  const [translated, setTranslated] = useState(null);
+  const [translating, setTranslating] = useState(false);
 
   useEffect(() => {
-    setCard(allCards[parseInt(id)] || allCards[0]);
+    const c = allCards[parseInt(id)] || allCards[0];
+    setCard(c);
+    setTranslated(null);
+    setLang('en');
   }, [id]);
+
+  const handleLang = useCallback(async (targetLang) => {
+    if (targetLang === lang) return;
+    setLang(targetLang);
+    if (targetLang === 'en') { setTranslated(null); return; }
+    setTranslating(true);
+    const [upright, pictureDescription, keywords, symbols, colors, aspects, practiceQuestions] = await Promise.all([
+      translateText(card.upright, targetLang),
+      translateText(card.pictureDescription, targetLang),
+      translateArray(card.keywords, targetLang),
+      translateArray(card.symbols, targetLang),
+      translateArray(card.colors, targetLang),
+      translateAspects(card.aspects, targetLang),
+      translatePracticeQuestions(card.practiceQuestions, targetLang),
+    ]);
+    setTranslated({ upright, pictureDescription, keywords, symbols, colors, aspects, practiceQuestions });
+    setTranslating(false);
+  }, [card, lang]);
+
+  // Use translated content if available, else original
+  const display = translated ? { ...card, ...translated } : card;
 
   if (!card) return (
     <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -68,14 +139,39 @@ export default function CardDetail() {
         </Link>
 
         {/* Header */}
-        <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} style={{ textAlign: 'center', marginBottom: '3rem' }}>
+        <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <span className="font-cinzel" style={{ color: 'rgba(201,168,76,0.6)', letterSpacing: 4, fontSize: '0.85rem' }}>
             {card.arcana} Arcana · {card.number}
           </span>
           <h1 className="font-cinzel-deco shimmer-text" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', margin: '0.5rem 0' }}>
             {card.name}
           </h1>
-          <div className="divider-gold" style={{ maxWidth: 300, margin: '0 auto' }} />
+          <div className="divider-gold" style={{ maxWidth: 300, margin: '0 auto 1.25rem' }} />
+
+          {/* Language toggle */}
+          <div style={{ display: 'inline-flex', gap: '0.4rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(201,168,76,0.25)', borderRadius: 30, padding: '4px 6px' }}>
+            {LANGS.map(l => (
+              <button
+                key={l.code}
+                onClick={() => handleLang(l.code)}
+                disabled={translating}
+                title={l.full}
+                style={{
+                  background: lang === l.code ? 'rgba(201,168,76,0.25)' : 'transparent',
+                  border: lang === l.code ? '1px solid rgba(201,168,76,0.6)' : '1px solid transparent',
+                  borderRadius: 20, padding: '4px 14px', cursor: translating ? 'wait' : 'pointer',
+                  color: lang === l.code ? 'var(--gold)' : 'rgba(201,168,76,0.55)',
+                  fontFamily: 'Cinzel', fontSize: '0.8rem', letterSpacing: 1,
+                  transition: 'all 0.25s',
+                }}
+              >
+                {translating && lang !== l.code && l.code !== 'en' ? l.label : l.label}
+              </button>
+            ))}
+            {translating && (
+              <span style={{ color: 'rgba(201,168,76,0.6)', fontSize: '0.75rem', alignSelf: 'center', paddingRight: 6 }}>...</span>
+            )}
+          </div>
         </motion.div>
 
         {/* Card image + basic info */}
@@ -102,7 +198,7 @@ export default function CardDetail() {
           <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }}>
             {/* Keywords */}
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.5rem' }}>
-              {(card.keywords || []).map((k, i) => (
+              {(display.keywords || []).map((k, i) => (
                 <span key={i} style={{
                   background: 'rgba(201,168,76,0.15)', border: '1px solid rgba(201,168,76,0.4)',
                   borderRadius: 20, padding: '4px 14px', fontSize: '0.85rem', color: 'var(--gold)',
@@ -114,15 +210,15 @@ export default function CardDetail() {
             {/* Upright meaning */}
             <div style={{ marginBottom: '1.5rem' }}>
               <div className="glass-card" style={{ padding: '1rem' }}>
-                <div style={{ color: '#2ecc71', fontFamily: 'Cinzel', fontSize: '0.8rem', letterSpacing: 1, marginBottom: '0.5rem' }}>↑ UPRIGHT MEANING</div>
-                <p style={{ color: 'var(--text-light)', fontSize: '0.9rem', lineHeight: 1.6 }}>{card.upright}</p>
+                <div style={{ color: '#2ecc71', fontFamily: 'Cinzel', fontSize: '0.8rem', letterSpacing: 1, marginBottom: '0.5rem' }}>↑ MEANING</div>
+                <p style={{ color: 'var(--text-light)', fontSize: '0.9rem', lineHeight: 1.6 }}>{display.upright}</p>
               </div>
             </div>
 
             {/* Picture description */}
             <div className="glass-card" style={{ padding: '1.5rem', marginBottom: '1rem' }}>
               <h3 className="font-cinzel" style={{ color: 'var(--gold)', fontSize: '0.9rem', letterSpacing: 1, marginBottom: '0.75rem' }}>🖼 Card Description</h3>
-              <p style={{ color: 'var(--text-light)', lineHeight: 1.8, fontSize: '0.95rem' }}>{card.pictureDescription}</p>
+              <p style={{ color: 'var(--text-light)', lineHeight: 1.8, fontSize: '0.95rem' }}>{display.pictureDescription}</p>
             </div>
 
             {/* Colors */}
@@ -130,7 +226,7 @@ export default function CardDetail() {
               <div className="glass-card" style={{ padding: '1rem' }}>
                 <h3 className="font-cinzel" style={{ color: 'var(--gold)', fontSize: '0.85rem', letterSpacing: 1, marginBottom: '0.75rem' }}>🎨 Colors</h3>
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                  {card.colors.map((c, i) => (
+                  {display.colors.map((c, i) => (
                     <span key={i} style={{ background: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.3)', borderRadius: 20, padding: '3px 12px', fontSize: '0.8rem', color: 'var(--text-light)' }}>{c}</span>
                   ))}
                 </div>
@@ -144,7 +240,7 @@ export default function CardDetail() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="glass-card" style={{ padding: '2rem', marginBottom: '2rem' }}>
             <h2 className="font-cinzel" style={{ color: 'var(--gold)', marginBottom: '1.5rem', letterSpacing: 2 }}>✦ Symbols & Their Meanings</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '1rem' }}>
-              {card.symbols.map((s, i) => (
+              {display.symbols.map((s, i) => (
                 <div key={i} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                   <span style={{ color: 'var(--gold)', fontSize: '1.2rem', marginTop: 2 }}>◆</span>
                   <p style={{ color: 'var(--text-light)', fontSize: '0.9rem', lineHeight: 1.6 }}>{s}</p>
@@ -161,7 +257,7 @@ export default function CardDetail() {
               ✦ 7 Aspects of Prediction ✦
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1rem' }}>
-              {Object.entries(card.aspects).map(([key, value]) => {
+              {Object.entries(display.aspects).map(([key, value]) => {
                 const meta = aspectIcons[key] || { icon: '✦', label: key, color: 'var(--gold)' };
                 return (
                   <div key={key} className="aspect-badge">
@@ -184,7 +280,7 @@ export default function CardDetail() {
               ✦ Practice Questions ✦
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              {card.practiceQuestions.map((pq, i) => (
+              {display.practiceQuestions.map((pq, i) => (
                 <div key={i} className="glass-card" style={{ overflow: 'hidden' }}>
                   <button
                     onClick={() => setActiveQ(activeQ === i ? null : i)}
